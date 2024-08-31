@@ -8,7 +8,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
  ({
   fontSize:Hovereditem===item?32:30,
   textDecoration:Hovereditem===item?'underline':'none',
-  color:Hovereditem===item?'lightblue':'blue',
+  color:Hovereditem===item?'lightgreen':'blue',
   marginLeft:40,
   transition:'font-size 0.5s, text-decoration 0.5s, color 0.5s'
  });
