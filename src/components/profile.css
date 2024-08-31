@@ -1,0 +1,85 @@
+@keyframes slideInLeft
+{
+ from {transform: translateX(-100%);opacity: 0;}
+ to {transform: translateX(0);opacity: 1;}
+}
+
+@keyframes slideOutLeft
+{
+ from {transform: translateX(0);opacity: 1;}
+ to {transform: translateX(-100%);opacity: 0;}
+}
+
+@keyframes slideInTop
+{
+ from {transform: translateY(-100%);opacity: 0;}
+ to {transform: translateY(0);opacity: 1;}
+}
+
+@keyframes slideOutTop
+{
+ from {transform: translateY(0);opacity: 1;}
+ to {transform: translateY(-100%);opacity: 0;}
+}
+
+@keyframes slideInRight
+{
+ from {transform: translateX(100%);opacity: 0;}
+ to {transform: translateX(0);opacity: 1;}
+}
+
+@keyframes slideOutRight
+{
+ from {transform: translateX(0);opacity: 1;}
+ to {transform: translateX(100%);opacity: 0;}
+}
+
+@keyframes slideInBottom
+{
+ from {transform: translateY(100%);opacity: 0;}
+ to {transform: translateY(0);opacity: 1;}
+}
+
+@keyframes slideOutBottom
+{
+ from {transform: translateY(0);opacity: 0;}
+ to {transform: translateY(100%);opacity: 1;}
+}
+
+@keyframes scaleIn
+{
+ from {font-size: 30;}
+ to {font-size:50}
+}
+
+@keyframes scaleOut
+{
+ from {font-size: 50;}
+ to {font-size:30}
+}
+
+@keyframes float
+{
+ 0% {transform:translateY(0);}
+ 50% {transform: translateY(-10px);}
+ 100% {transform: translateY(0);}
+}
+
+@keyframes fadeIn
+{
+ from {opacity: 0;}
+ to {opacity: 1;}
+}
+
+@keyframes fadeOut
+{
+ from {opacity: 1;}
+ to {opacity: 0;}
+}
+
+@keyframes fadeInOut
+{
+ 0% {opacity:1}
+ 50% {opacity: 0;}
+ 100% {opacity: 1;}
+}
