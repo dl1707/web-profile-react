@@ -303,7 +303,7 @@ export default function Profile()
       <div ref={certificatesRef} onMouseEnter={()=>setcviewed(true)}  onMouseLeave={()=>setcviewed(false)}><Certificates isC={cviewed}/></div>
       <div ref={contactRef}><Contacts scrollToHome={()=>scrollTo(homeRef)}/></div>
       <div>
-        <h1>Hello this is test image</h1>
+        <h1>This is me</h1>
         <img src="./Daryl photo 4.jpg" alt="DARYL"/>
       </div>
     </div>
