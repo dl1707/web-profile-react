@@ -302,7 +302,10 @@ export default function Profile()
       <div ref={worksRef} onMouseEnter={()=>setwviewed(true)}  onMouseLeave={()=>setwviewed(false)}><Works isW={wviewed}/></div>
       <div ref={certificatesRef} onMouseEnter={()=>setcviewed(true)}  onMouseLeave={()=>setcviewed(false)}><Certificates isC={cviewed}/></div>
       <div ref={contactRef}><Contacts scrollToHome={()=>scrollTo(homeRef)}/></div>
-      <div><img src="public\Daryl photo 4.jpg" alt="DARYL"/></div>
+      <div>
+        <h1>Hello this is test image</h1>
+        <img src="public\Daryl photo 4.jpg" alt="DARYL"/>
+      </div>
     </div>
   );
 }
