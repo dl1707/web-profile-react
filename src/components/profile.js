@@ -304,7 +304,7 @@ export default function Profile()
       <div ref={contactRef}><Contacts scrollToHome={()=>scrollTo(homeRef)}/></div>
       <div>
         <h1>Hello this is test image</h1>
-        <img src="public\Daryl photo 4.jpg" alt="DARYL"/>
+        <img src="./Daryl photo 4.jpg" alt="DARYL"/>
       </div>
     </div>
   );
