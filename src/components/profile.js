@@ -8,7 +8,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
  ({
   fontSize:Hovereditem===item?32:30,
   textDecoration:Hovereditem===item?'underline':'none',
-  color:Hovereditem===item?'lightgreen':'blue',
+  color:Hovereditem===item?'lightblue':'blue',
   marginLeft:40,
   transition:'font-size 0.5s, text-decoration 0.5s, color 0.5s'
  });
@@ -302,6 +302,7 @@ export default function Profile()
       <div ref={worksRef} onMouseEnter={()=>setwviewed(true)}  onMouseLeave={()=>setwviewed(false)}><Works isW={wviewed}/></div>
       <div ref={certificatesRef} onMouseEnter={()=>setcviewed(true)}  onMouseLeave={()=>setcviewed(false)}><Certificates isC={cviewed}/></div>
       <div ref={contactRef}><Contacts scrollToHome={()=>scrollTo(homeRef)}/></div>
+      <div><img src="public\Daryl photo 4.jpg" alt="DARYL"/></div>
     </div>
   );
 }
@@ -316,4 +317,6 @@ Light green - #14e70d
 Light blue - #16eee6
 
 For alignment to work,first put display:'flex'
+
+For deploying website online follow https://youtu.be/7wzuievFjrk?si=2MM_DNYPweNbGtvM (through github)
 */
