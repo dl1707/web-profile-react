@@ -38,7 +38,7 @@ function Home()
          <p style={{width:800,marginLeft:80,fontSize:30,display:'inline-block'}}>Web developer - App Developer - Database management - Video Editor - Animation Maker - Teacher - Song Writer</p>
         </div>
         <div className="Profile Image" style={{display:'inline-block',marginLeft:150}}>
-          <img src="./Daryl Photo 2.jpg" alt="Daryl's profile" style={{width:300,height:380,borderRadius:30,animation:' float 3s infinite'}}/>
+          <img src="./Daryl Photo 4.jpg" alt="Daryl's profile" style={{width:300,height:380,borderRadius:30,animation:' float 3s infinite'}}/>
         </div>
       </div>
 
