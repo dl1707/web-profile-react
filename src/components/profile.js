@@ -176,7 +176,7 @@ function Works({isW})
                {name:"Route",img:['Route App.png']},
                {name:"API",img:['API app.png']},
                {name:'Todo App',img:['Todo App.png']},
-               {name:'Bakery Management System',img:['Preview.png','bakery Login.png','Menu.png','Food Details.png','Bill.png','Contact.png','Bakery DB.png']}];
+               {name:'Bakery Management System',img:['Preview.png','Bakery Login.png','Menu.png','Food Details.png','Bill.png','Contact.png','Bakery DB.png']}];
 
   useEffect(()=>                      //For some effects to happen
   {
