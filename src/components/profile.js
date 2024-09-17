@@ -38,7 +38,7 @@ function Home()
          <p style={{width:800,marginLeft:80,fontSize:30,display:'inline-block'}}>Web developer - App Developer - Database management - Video Editor - Animation Maker - Teacher - Song Writer</p>
         </div>
         <div className="Profile Image" style={{display:'inline-block',marginLeft:150}}>
-          <img src="./Daryl photo 4.jpg" alt="Daryl's profile" style={{width:300,height:380,borderRadius:30,animation:' float 3s infinite'}}/>
+          <img src="./Daryl Photo 5.jpg" alt="Daryl's profile" style={{width:300,height:380,borderRadius:30,animation:' float 3s infinite'}}/>
         </div>
       </div>
 
@@ -222,7 +222,8 @@ function Certificates({isC})
            {name:'Cybersecurity and Ethical Hacking Workshop',img:'Blue Shell Technologies.png',ht:250,wt:420},
            {name:'A3K Technical Quiz',img:'A3K Cipher Quest.png',ht:250,wt:420},
            {name:'Microsoft Intrnforte Internship',img:'Intrnforte Internship Certificate.jpg',ht:250,wt:420},
-           {name:'NPTEL Swayam ML Course',img:'ML NPTEL MOOC Certificate.jpg',ht:250,wt:420}];
+           {name:'NPTEL Swayam ML Course',img:'ML NPTEL MOOC Certificate.jpg',ht:250,wt:420},
+           {name:'Gate 2024 Score Card',img:'Gate score 2024.png',ht:250,wt:420}];
   return(
     <div>
       <h1 style={{marginLeft:600,marginTop:100}}>Certificates</h1>
