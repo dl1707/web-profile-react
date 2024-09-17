@@ -305,8 +305,35 @@ export default function Profile()
   const [cviewed,setcviewed]=useState(false);
   const [wviewed,setwviewed]=useState(false);
 
-  const scrollTo=(xref)=>{xref.current.scrollIntoView({ behavior: 'smooth' });
-  };
+  const scrollTo=(xref)=>{xref.current.scrollIntoView({ behavior: 'smooth' });};
+
+  useEffect(() => 
+  {
+   // Dynamically load ScrollReveal
+   const script = document.createElement('script');
+   script.src = "https://unpkg.com/scrollreveal";
+   script.onload = () => 
+   {
+    if (window.ScrollReveal) 
+    {
+     window.ScrollReveal().reveal(worksRef.current,{reset:true,
+                                                    duration:1000,
+                                                    afterReveal:()=>{setwviewed(true);},
+                                                    afterReset:()=>{setwviewed(false);}
+                                                   });
+
+     window.ScrollReveal().reveal(certificatesRef.current,{reset:true,
+                                                          duration:1000,
+                                                          afterReveal:()=>{setcviewed(true);},
+                                                          afterReset:()=>{setcviewed(false);}
+                                                          });
+    };
+   }
+   document.body.appendChild(script);
+
+   // Cleanup script if component unmounts
+   return () => {document.body.removeChild(script);};
+  }, []);
 
   return(
     <div>
@@ -317,8 +344,8 @@ export default function Profile()
               scrollToContact={()=>scrollTo(contactRef)}/>
       <div ref={homeRef}><Home/></div>
       <div ref={aboutRef}><About/></div>
-      <div ref={worksRef} onMouseEnter={()=>setwviewed(true)}  onMouseLeave={()=>setwviewed(false)}><Works isW={wviewed}/></div>
-      <div ref={certificatesRef} onMouseEnter={()=>setcviewed(true)}  onMouseLeave={()=>setcviewed(false)}><Certificates isC={cviewed}/></div>
+      <div ref={worksRef}><Works isW={wviewed}/></div>
+      <div ref={certificatesRef}><Certificates isC={cviewed}/></div>
       <div ref={contactRef}><Contacts scrollToHome={()=>scrollTo(homeRef)}/></div>
     </div>
   );
