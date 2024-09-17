@@ -13,7 +13,6 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
   {
     if(mode==="sun") {mode="moon";defcolor="black";setUI("./Icons/Moon UI.png");}
     else             {mode="sun";defcolor="white";setUI("./Icons/Sun UI.png");}
-    alert("Currently, mode:"+mode+", defcolor:"+defcolor);
   }
 
  const getStyle=(item)=>
