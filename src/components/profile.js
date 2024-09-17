@@ -254,7 +254,7 @@ function Certificates({isC})
   );
 }
 
-function Contacts({scrollToHome})
+function Contacts({scrollToHeader})
 {
  const [showpopup,setshowpopup]=useState(false);
  
@@ -286,13 +286,14 @@ function Contacts({scrollToHome})
                               cursor: "pointer",
                               zIndex: 1000,
                               animation:'slideInBottom 0.5s forwards'}} 
-                              onClick={scrollToHome}>^</h1>}
+                              onClick={scrollToHeader}>^</h1>}
     </div>
   );
 }
 
 export default function Profile()
 {
+  const headerRef=useRef(null);
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const worksRef = useRef(null);
@@ -334,7 +335,8 @@ export default function Profile()
 
   return(
     <div>
-      <Header scrollToHome={()=>scrollTo(homeRef)}
+      <Header ref={headerRef}
+              scrollToHome={()=>scrollTo(homeRef)}
               scrollToAbout={()=>scrollTo(aboutRef)}
               scrollToWorks={()=>scrollTo(worksRef)}
               scrollToCertificates={()=>scrollTo(certificatesRef)}
@@ -343,7 +345,7 @@ export default function Profile()
       <div ref={aboutRef}><About/></div>
       <div ref={worksRef}><Works isW={wviewed}/></div>
       <div ref={certificatesRef}><Certificates isC={cviewed}/></div>
-      <div ref={contactRef}><Contacts scrollToHome={()=>scrollTo(homeRef)}/></div>
+      <div ref={contactRef}><Contacts scrollToHeader={()=>scrollTo(headerRef)}/></div>
     </div>
   );
 }
