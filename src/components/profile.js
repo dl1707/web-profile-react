@@ -8,7 +8,6 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
 
   function chmod()
   {
-   alert(UI);
    if(UI==="./Icons/Moon UI.png") setUI("./Icons/Sun UI.png");
    else setUI("./Icons/Moon UI.png");
   }
