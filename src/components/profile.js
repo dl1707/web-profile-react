@@ -60,7 +60,7 @@ function About()
   const tskills=['AI','ML','Web','Data Interpretation','Data Analysis','Presentation','MS Word','MS Powerpoint','MS Excel'];
   const ntskills=['Problem Solving','Thinking','Analytical thinking','Creativity','Research','Management','Leadership','Decision-Making','Motivation'];
   const lang=['English','Malayalam','Hindi'];
-  const plang=['Python','C','Java'];
+  const plang=['Python','C','Java','R',''];
   const fl=['HTML','JS','CSS','ReactJS','React Native'];
   const bl=['SQL','SQLite','MongoDB','Flask','Django'];
 
