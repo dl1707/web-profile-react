@@ -182,7 +182,7 @@ function Works({isW})
                {name:"API",img:['API app.png']},
                {name:'Todo App',img:['Todo App.png']},
                {name:'Bakery Management',img:['Preview.png','Bakery Login.png','Menu.png','Food Details.png','Bill.png','Contact.png','Bakery DB.png']},
-               {name:'TSDR',img:['TSDR Home.png','TSDR Browse.png','TSDR Display.png','TSDR Predict.png','TSDR Performance Metric.png']}];
+               {name:'Signal Detection',img:['TSDR Home.png','TSDR Browse.png','TSDR Display.png','TSDR Predict.png','TSDR Performance Metric.png']}];
 
   useEffect(()=>                      //For some effects to happen
   {
