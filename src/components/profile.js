@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import "./profile.css";
 
+
 function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact})
 {
  const [Hovereditem,setHoveredItem]=useState(null);
@@ -174,7 +175,8 @@ function Works({isW})
                {name:'Food Ordering App',img:['Hotel Home resized.png','Hotel dishes.png','Hotel cart.png','Hotel orders.png','Hotel order success.png','Hotel list of orders.png']},
                {name:"Route",img:['Route App.png']},
                {name:"API",img:['API app.png']},
-               {name:'Todo App',img:['Todo App.png']}];
+               {name:'Todo App',img:['Todo App.png']},
+               {name:'Bakery Management System',img:['Preview.png','bakery Login.png','Menu.png','Food Details.png','Bill.png','Contact.png','Bakery DB.png']}];
 
   useEffect(()=>                      //For some effects to happen
   {
