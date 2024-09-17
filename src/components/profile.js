@@ -1,6 +1,8 @@
 import React, {useEffect, useRef, useState} from "react";
 import "./profile.css";
 
+let mode="sun";
+let defcolor="black";
 
 function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact})
 {
@@ -9,6 +11,9 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
 
   function chmod()
   {
+    if(mode==="sun") {mode="moon";defcolor="white";}
+    else {mode="sun";defcolor="black";}
+    alert(mode+":"+defcolor);
    if(UI==="./Icons/Moon UI.png") setUI("./Icons/Sun UI.png");
    else setUI("./Icons/Moon UI.png");
   }
