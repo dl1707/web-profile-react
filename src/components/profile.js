@@ -11,6 +11,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
    alert(UI);
    if(UI==="./Icons/Moon UI.png") setUI("./Icons/Sun UI.png");
    else setUI("./Icons/Moon UI.png");
+   alert("Icon changed to "+UI);
   }
 
  const getStyle=(item)=>
