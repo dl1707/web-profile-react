@@ -11,7 +11,6 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
    alert(UI);
    if(UI==="./Icons/Moon UI.png") setUI("./Icons/Sun UI.png");
    else setUI("./Icons/Moon UI.png");
-   alert("Icon changed to "+UI);
   }
 
  const getStyle=(item)=>
@@ -31,7 +30,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
       <h2 style={getStyle('Works')} onMouseEnter={()=>setHoveredItem('Works')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToWorks}>Works</h2>
       <h2 style={getStyle('Certificates')} onMouseEnter={()=>setHoveredItem('Certificates')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToCertificates}>Certificates</h2>
       <h2 style={getStyle('Contact')} onMouseEnter={()=>setHoveredItem('Contact')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToContact}>Contact</h2>
-      <button style={{border:'none',borderRadius:'100px',padding:15,marginTop:20,marginLeft:30,width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onClick={chmod}><img src={UI} alt="D/B Mode" style={{borderRadius:'70px',width:50}}/></button>
+      <button style={{border:'none',borderRadius:'100px',padding:15,marginTop:20,marginLeft:20,width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onClick={chmod}><img src={UI} alt="D/B Mode" style={{borderRadius:'70px',width:50}}/></button>
     </div>
   );
 }
