@@ -25,7 +25,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
  });
 
   return(
-    <div style={{display:'flex',border:'1px solid blue',borderRadius:8}}>
+    <div style={{display:'flex',border:'1px solid blue',borderRadius:8,backgroundColor:defcolor}}>
       <h2 style={{color:'blue',fontSize:30,marginLeft:30,marginRight:200}}>DARYL ANTONY LUIZ</h2>
       <h2 style={getStyle('Home')} onMouseEnter={()=>setHoveredItem('Home')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToHome} >Home</h2>
       <h2 style={getStyle('About')} onMouseEnter={()=>setHoveredItem('About')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToAbout}>About</h2>
@@ -179,7 +179,7 @@ function Works({isW})
                {name:"API",img:['API app.png']},
                {name:'Todo App',img:['Todo App.png']},
                {name:'Bakery Management',img:['Preview.png','Bakery Login.png','Menu.png','Food Details.png','Bill.png','Contact.png','Bakery DB.png']},
-               {name:'Signal Detection',img:['TSDR Home.png','TSDR Browse.png','TSDR Display.png','TSDR Predict.png','TSDR Performance Metric.png']}];
+               {name:'Traffic Signal Detection',img:['TSDR Home.png','TSDR Browse.png','TSDR Display.png','TSDR Predict.png','TSDR Performance Metric.png']}];
 
   useEffect(()=>                      //For some effects to happen
   {
@@ -335,12 +335,13 @@ export default function Profile()
 
   return(
     <div>
-      <Header ref={headerRef}
-              scrollToHome={()=>scrollTo(homeRef)}
-              scrollToAbout={()=>scrollTo(aboutRef)}
-              scrollToWorks={()=>scrollTo(worksRef)}
-              scrollToCertificates={()=>scrollTo(certificatesRef)}
-              scrollToContact={()=>scrollTo(contactRef)}/>
+      <div ref={headerRef}>
+        <Header scrollToHome={()=>scrollTo(homeRef)}
+                scrollToAbout={()=>scrollTo(aboutRef)}
+                scrollToWorks={()=>scrollTo(worksRef)}
+                scrollToCertificates={()=>scrollTo(certificatesRef)}
+                scrollToContact={()=>scrollTo(contactRef)}/>
+      </div>
       <div ref={homeRef}><Home/></div>
       <div ref={aboutRef}><About/></div>
       <div ref={worksRef}><Works isW={wviewed}/></div>
