@@ -49,7 +49,7 @@ function Home()
          <p style={{color:(Hovereditem==='Daryl')?'lightblue':'black',width:130,marginLeft:350,marginTop:5,marginBottom:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>LUIZ</p>
          <p style={{width:800,marginLeft:80,fontSize:30,display:'inline-block'}}>Web developer - App Developer - Database management - Video Editor - Animation Maker - Teacher - Song Writer</p>
         </div>
-        <div className="Profile Image" style={{display:'inline-block',marginLeft:150}}>
+        <div className="Profile Image" style={{display:'inline-block',marginLeft:150,border:'1px solid black'}}>
           <img src="./Daryl Photo 4 cropped.jpg" alt="Daryl's profile" style={{width:300,height:380,borderRadius:30,animation:' float 3s infinite'}}/>
         </div>
       </div>
