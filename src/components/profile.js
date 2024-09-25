@@ -25,7 +25,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
  });
 
   return(
-    <div style={{display:'flex',border:'1px solid blue',borderRadius:8,backgroundColor:defcolor}}>
+    <div style={{display:'flex',border:'1px solid blue',borderRadius:8,backgroundColor:'white'}}>
       <h2 style={{color:'blue',fontSize:30,marginLeft:30,marginRight:200}}>DARYL ANTONY LUIZ</h2>
       <h2 style={getStyle('Home')} onMouseEnter={()=>setHoveredItem('Home')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToHome} >Home</h2>
       <h2 style={getStyle('About')} onMouseEnter={()=>setHoveredItem('About')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToAbout}>About</h2>
