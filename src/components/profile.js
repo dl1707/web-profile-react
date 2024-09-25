@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import "./profile.css";
 
 let mode="sun";
-let defcolor="white";
+let defcolor="black";
 
 function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact})
 {
@@ -11,8 +11,8 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
 
   function chmod()
   {
-    if(mode==="sun") {mode="moon";defcolor="white";setUI("./Icons/Moon UI.png");}
-    else             {mode="sun";defcolor="black";setUI("./Icons/Sun UI.png");}
+    if(mode==="sun") {mode="moon";defcolor="black";setUI("./Icons/Moon UI.png");}
+    else             {mode="sun";defcolor="white";setUI("./Icons/Sun UI.png");}
   }
 
  const getStyle=(item)=>
@@ -25,7 +25,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
  });
 
   return(
-    <div style={{display:'flex',border:'1px solid blue',borderRadius:8,backgroundColor:'white'}}>
+    <div style={{display:'flex',border:'1px solid blue',borderRadius:8,backgroundColor:"white"}}>
       <h2 style={{color:'blue',fontSize:30,marginLeft:30,marginRight:200}}>DARYL ANTONY LUIZ</h2>
       <h2 style={getStyle('Home')} onMouseEnter={()=>setHoveredItem('Home')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToHome} >Home</h2>
       <h2 style={getStyle('About')} onMouseEnter={()=>setHoveredItem('About')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToAbout}>About</h2>
