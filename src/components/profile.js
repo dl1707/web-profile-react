@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import "./profile.css";
 
 let mode="sun";
-let defcolor="black";
+let defcolor="white";
 
 function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact})
 {
@@ -11,8 +11,8 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
 
   function chmod()
   {
-    if(mode==="sun") {mode="moon";defcolor="black";setUI("./Icons/Moon UI.png");}
-    else             {mode="sun";defcolor="white";setUI("./Icons/Sun UI.png");}
+    if(mode==="sun") {mode="moon";defcolor="white";setUI("./Icons/Moon UI.png");}
+    else             {mode="sun";defcolor="black";setUI("./Icons/Sun UI.png");}
   }
 
  const getStyle=(item)=>
