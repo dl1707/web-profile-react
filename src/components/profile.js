@@ -13,10 +13,9 @@ function chmod()
   alert("Changed to "+UI);
 }
 
-function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact})
+function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact,isH})
 {
  const [Hovereditem,setHoveredItem]=useState(null);
- //const [UI,setUI]=useState("./Icons/Moon UI.png");
 
  const getStyle=(item)=>
  ({
@@ -28,7 +27,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
  });
 
   return(
-    <div style={{display:'flex',border:'1px solid blue',borderRadius:8}}>
+    <div style={{display:(isH)?'flex':'flex',border:'1px solid blue',borderRadius:8}}>
       <h2 style={{color:'blue',fontSize:30,marginLeft:30,marginRight:200}}>DARYL ANTONY LUIZ</h2>
       <h2 style={getStyle('Home')} onMouseEnter={()=>setHoveredItem('Home')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToHome} >Home</h2>
       <h2 style={getStyle('About')} onMouseEnter={()=>setHoveredItem('About')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToAbout}>About</h2>
@@ -36,15 +35,16 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
       <h2 style={getStyle('Certificates')} onMouseEnter={()=>setHoveredItem('Certificates')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToCertificates}>Certificates</h2>
       <h2 style={getStyle('Contact')} onMouseEnter={()=>setHoveredItem('Contact')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToContact}>Contact</h2>
 
-      <button style={{border:'none',borderRadius:'100px',padding:15,marginTop:20,marginLeft:20,width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onClick={chmod}><img src={UI} alt="D/B Mode" style={{borderRadius:'70px',width:50}}/></button>
+      <button className="modeButton" onClick={chmod}><img src={UI} alt="D/B Mode" className="modeIcon"/></button>
     </div>
   );
 }
 
-function Home()
+function Home({isH})
 {
   const Ico='./Icons/';
   const [Hovereditem,setHoveredItem]=useState(null);
+  
   //"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
   let jokes=[
              "Why do programmers prefer dark mode? Because light attracts bugs!",
@@ -99,7 +99,7 @@ function About()
   const bl=['SQL','SQLite','Oracle','MongoDB','Flask'];
 
   return(
-    <div style={{}}>
+    <div>
       <div style={{display:'flex'}}>
         <div className="About" style={{}}>
         <h1 style={{marginLeft:30}}>About</h1>
@@ -144,7 +144,7 @@ function About()
 
       <div className="Skills" style={{display:'flex',height:100,marginLeft:100,marginBottom:350}}>
         <div className="Technical">
-          <h1>Technical Skills</h1>
+          <h1 style={{marginLeft:30}}>Technical Skills</h1>
           <ul>
             {tskills.map((item,index)=>(<p key={index} className="greenbutton2">{item}</p>))}
           </ul>
@@ -322,8 +322,12 @@ export default function Profile()
   const certificatesRef = useRef(null);
   const contactRef = useRef(null);
 
-  const [cviewed,setcviewed]=useState(false);
+  const [Hrviewed,setHrviewed]=useState(false);
+  const [Hmviewed,setHmviewed]=useState(false);
+  const [aviewed,setaviewed]=useState(false);
   const [wviewed,setwviewed]=useState(false);
+  const [cviewed,setcviewed]=useState(false);
+  const [conviewed,setconviewed]=useState(false);
 
   const scrollTo=(xref)=>{xref.current.scrollIntoView({ behavior: 'smooth' });};
 
@@ -337,6 +341,23 @@ export default function Profile()
    {
     if (window.ScrollReveal) 
     {
+      /*window.ScrollReveal().reveal(headerRef.current,{reset:true,
+                                                     duration:1000,
+                                                     afterReveal:()=>{setHrviewed(true);},
+                                                     afterReset:()=>{setHrviewed(false);}
+                                                    });*/
+ 
+      window.ScrollReveal().reveal(homeRef.current,{reset:true,
+                                                    duration:1000,
+                                                    afterReveal:()=>{setHmviewed(true);},
+                                                    afterReset:()=>{setHmviewed(false);}
+                                                   });
+     window.ScrollReveal().reveal(aboutRef.current,{reset:true,
+                                                    duration:1000,
+                                                    afterReveal:()=>{setaviewed(true);},
+                                                    afterReset:()=>{setaviewed(false);}
+                                                   });
+
      window.ScrollReveal().reveal(worksRef.current,{reset:true,
                                                     duration:1000,
                                                     afterReveal:()=>{setwviewed(true);},
@@ -348,6 +369,12 @@ export default function Profile()
                                                           afterReveal:()=>{setcviewed(true);},
                                                           afterReset:()=>{setcviewed(false);}
                                                           });
+
+     window.ScrollReveal().reveal(contactRef.current,{reset:true,
+                                                      duration:1000,
+                                                      afterReveal:()=>{setconviewed(true);},
+                                                      afterReset:()=>{setconviewed(false);}
+                                                     });                                                     
     };
    }
    document.body.appendChild(script);
@@ -358,15 +385,15 @@ export default function Profile()
 
   return(
     <div style={{backgroundColor:bgcolor,color:txcolor}}>
-      <div ref={headerRef}>
+      <div ref={headerRef} onMouseEnter={()=>setHrviewed(true)} onMouseLeave={()=>setHrviewed(false)}>
         <Header scrollToHome={()=>scrollTo(homeRef)} scrollToAbout={()=>scrollTo(aboutRef)}
                 scrollToWorks={()=>scrollTo(worksRef)} scrollToCertificates={()=>scrollTo(certificatesRef)}
-                scrollToContact={()=>scrollTo(contactRef)}/></div>
-      <div ref={homeRef}><Home/></div>
-      <div ref={aboutRef}><About/></div>
+                scrollToContact={()=>scrollTo(contactRef)} isH={Hrviewed}/></div>
+      <div ref={homeRef}><Home isH={Hmviewed}/></div>
+      <div ref={aboutRef}><About isA={aviewed}/></div>
       <div ref={worksRef}><Works isW={wviewed}/></div>
       <div ref={certificatesRef}><Certificates isC={cviewed}/></div>
-      <div ref={contactRef}><Contacts scrollToHeader={()=>scrollTo(headerRef)}/></div>
+      <div ref={contactRef}><Contacts isC={conviewed} scrollToHeader={()=>scrollTo(headerRef)}/></div>
     </div>
   );
 }
