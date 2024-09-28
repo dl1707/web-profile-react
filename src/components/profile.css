@@ -25,12 +25,14 @@
  display: flex;
  width: 200px;
  background-color: #14e70d;
+ border: 1px solid white;
  border-radius: 10px;
  padding: 5px; 
  justify-content: center;
  align-items: center;
  font-weight: bold;
  font-size: 20px; 
+ /*transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;*/
 }
   
 .greenbutton2:hover 

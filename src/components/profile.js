@@ -4,17 +4,19 @@ import "./profile.css";
 let mode="sun";
 let bgcolor="white";
 let txcolor="black";
+let UI="./Icons/Moon UI.png";
+
+function chmod()
+{
+  if(mode==="sun") {mode="moon";UI="./Icons/Moon UI.png";bgcolor="black";txcolor="white"}
+  else             {mode="sun";UI="./Icons/Sun UI.png";bgcolor="white";txcolor="black"}
+  alert("Changed to "+UI);
+}
 
 function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact})
 {
  const [Hovereditem,setHoveredItem]=useState(null);
- const [UI,setUI]=useState("./Icons/Moon UI.png");
-
-  function chmod()
-  {
-    if(mode==="sun") {mode="moon";bgcolor="black";txcolor="white";setUI("./Icons/Moon UI.png");}
-    else             {mode="sun";bgcolor="white";txcolor="black";setUI("./Icons/Sun UI.png");}
-  }
+ //const [UI,setUI]=useState("./Icons/Moon UI.png");
 
  const getStyle=(item)=>
  ({
@@ -26,13 +28,14 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
  });
 
   return(
-    <div style={{display:'flex',border:'1px solid blue',borderRadius:8,backgroundColor:bgcolor}}>
+    <div style={{display:'flex',border:'1px solid blue',borderRadius:8}}>
       <h2 style={{color:'blue',fontSize:30,marginLeft:30,marginRight:200}}>DARYL ANTONY LUIZ</h2>
       <h2 style={getStyle('Home')} onMouseEnter={()=>setHoveredItem('Home')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToHome} >Home</h2>
       <h2 style={getStyle('About')} onMouseEnter={()=>setHoveredItem('About')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToAbout}>About</h2>
       <h2 style={getStyle('Works')} onMouseEnter={()=>setHoveredItem('Works')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToWorks}>Works</h2>
       <h2 style={getStyle('Certificates')} onMouseEnter={()=>setHoveredItem('Certificates')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToCertificates}>Certificates</h2>
       <h2 style={getStyle('Contact')} onMouseEnter={()=>setHoveredItem('Contact')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToContact}>Contact</h2>
+
       <button style={{border:'none',borderRadius:'100px',padding:15,marginTop:20,marginLeft:20,width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onClick={chmod}><img src={UI} alt="D/B Mode" style={{borderRadius:'70px',width:50}}/></button>
     </div>
   );
@@ -64,12 +67,12 @@ function Home()
     <div style={{marginTop:10}}>
       <div style={{display:"flex"}}>
         <div className="Title" style={{width:800,borderRadius:30,display:'inline-block'}}>
-         <p style={{color:(Hovereditem==='Daryl')?'lightblue':'black',width:500,marginLeft:200,marginBottom:5,marginTop:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',wordSpacing:30,transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>DARYL ANTONY</p>
-         <p style={{color:(Hovereditem==='Daryl')?'lightblue':'black',width:130,marginLeft:350,marginTop:5,marginBottom:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>LUIZ</p>
+         <p style={{color:(Hovereditem==='Daryl')?'lightblue':'',width:500,marginLeft:200,marginBottom:5,marginTop:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',wordSpacing:30,transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>DARYL ANTONY</p>
+         <p style={{color:(Hovereditem==='Daryl')?'lightblue':'',width:130,marginLeft:350,marginTop:5,marginBottom:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>LUIZ</p>
          <p style={{width:800,marginLeft:80,fontSize:30,display:'inline-block'}}>Web developer - App Developer - Database management - Video Editor - Animation Maker - Teacher - Song Writer</p>
         </div>
         <div className="Profile Image" style={{display:'inline-block',marginLeft:150}}>
-          <img src="./Daryl Photo 4 cropped.jpg" alt="Daryl's profile" style={{width:300,height:380,border:'1px solid black',borderRadius:30,animation:' float 3s infinite'}}/>
+          <img src="./Daryl Photo 4 cropped.jpg" alt="Daryl's profile" style={{width:300,height:380,border:'1px solid '+txcolor,borderRadius:30,animation:' float 3s infinite'}}/>
         </div>
       </div>
 
@@ -96,12 +99,12 @@ function About()
   const bl=['SQL','SQLite','Oracle','MongoDB','Flask'];
 
   return(
-    <div>
+    <div style={{}}>
       <div style={{display:'flex'}}>
-        <div className="About">
-        <h1 style={{marginLeft:30,color:'black'}}>About</h1>
-          <div style={{width:680,marginTop:1,marginLeft:30,border:'1px solid black',borderRadius:'20px',display:'flex',alignItems:'center',justifyContent:'center'}}>
-            <p style={{height:407,marginLeft:10,marginRight:10,fontSize:20,color:'black'}}>
+        <div className="About" style={{}}>
+        <h1 style={{marginLeft:30}}>About</h1>
+          <div style={{width:680,marginTop:1,marginLeft:30,border:'1px solid '+txcolor,borderRadius:'20px',display:'flex',alignItems:'center',justifyContent:'center'}}>
+            <p style={{height:407,marginLeft:10,marginRight:10,fontSize:20}}>
               Hi I am an undergraduate Computer Science and Engineering student of Rajagiri School of Engineering and Technology,
               Kakkanad,Ernakulam. I was born and brought up in Ernakulam,Kerala. I have studied in Archbishop Attipetty Public 
               School,Vaduthala and completed +1 and +2 in Chinmaya Vidyalaya Vaduthala. I have little hearing problem but that has
@@ -189,7 +192,7 @@ function Works({isW})
 
   const works=[{name:'Simple Icon Drag App',img:['icdg1.png','icdg2.png','icdg3.png']},
                {name:'Simple Flexing App',img:['flex.png']},
-               {name:'Remade Instagram App',img:['classinsta.png','class.png']},//What abt 'class.png'?
+               {name:'Remade Instagram App',img:['classinsta.png','class.png']},
                {name:'Card with Images App',img:['card.png']},
                {name:'Login App',img:['login1.png','login2.png','login3.png']},
                {name:'Note Taking App',img:['Starting screen.png','Note signin.png','Home screen(Categories).png','Notes screen resized.png','Note details screen.png']},
@@ -324,6 +327,7 @@ export default function Profile()
 
   const scrollTo=(xref)=>{xref.current.scrollIntoView({ behavior: 'smooth' });};
 
+  //ScrollReveal()
   useEffect(() => 
   {
    // Dynamically load ScrollReveal
@@ -353,14 +357,11 @@ export default function Profile()
   }, []);
 
   return(
-    <div>
+    <div style={{backgroundColor:bgcolor,color:txcolor}}>
       <div ref={headerRef}>
-        <Header scrollToHome={()=>scrollTo(homeRef)}
-                scrollToAbout={()=>scrollTo(aboutRef)}
-                scrollToWorks={()=>scrollTo(worksRef)}
-                scrollToCertificates={()=>scrollTo(certificatesRef)}
-                scrollToContact={()=>scrollTo(contactRef)}/>
-      </div>
+        <Header scrollToHome={()=>scrollTo(homeRef)} scrollToAbout={()=>scrollTo(aboutRef)}
+                scrollToWorks={()=>scrollTo(worksRef)} scrollToCertificates={()=>scrollTo(certificatesRef)}
+                scrollToContact={()=>scrollTo(contactRef)}/></div>
       <div ref={homeRef}><Home/></div>
       <div ref={aboutRef}><About/></div>
       <div ref={worksRef}><Works isW={wviewed}/></div>
