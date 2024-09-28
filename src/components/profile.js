@@ -10,7 +10,6 @@ function chmod()
 {
   if(mode==="sun") {mode="moon";UI="./Icons/Moon UI.png";bgcolor="black";txcolor="white"}
   else             {mode="sun";UI="./Icons/Sun UI.png";bgcolor="white";txcolor="black"}
-  alert("Changed to "+UI);
 }
 
 function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact,isH})
