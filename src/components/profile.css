@@ -1,3 +1,44 @@
+.greenbutton1 
+{
+ display: flex;
+ margin: 10px;
+ border: 1px solid white;
+ border-radius: 10px;
+ box-shadow: none;
+ background-color: #14e70d;
+ font-size: 20px;
+ font-weight: bold;
+ padding: 5px;
+ width: 150px;
+ justify-content: center;
+ /*transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;*/
+}
+  
+.greenbutton1:hover 
+{
+ border-color: #00ff00;
+ box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+}
+  
+.greenbutton2 
+{
+ display: flex;
+ width: 200px;
+ background-color: #14e70d;
+ border-radius: 10px;
+ padding: 5px; 
+ justify-content: center;
+ align-items: center;
+ font-weight: bold;
+ font-size: 20px; 
+}
+  
+.greenbutton2:hover 
+{
+ border-color: #00ff00;
+ box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+}
+
 @keyframes slideInLeft
 {
  from {transform: translateX(-100%);opacity: 0;}

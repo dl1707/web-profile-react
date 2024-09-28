@@ -2,7 +2,8 @@ import React, {useEffect, useRef, useState} from "react";
 import "./profile.css";
 
 let mode="sun";
-let defcolor="black";
+let bgcolor="white";
+let txcolor="black";
 
 function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact})
 {
@@ -11,8 +12,8 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
 
   function chmod()
   {
-    if(mode==="sun") {mode="moon";defcolor="black";setUI("./Icons/Moon UI.png");}
-    else             {mode="sun";defcolor="white";setUI("./Icons/Sun UI.png");}
+    if(mode==="sun") {mode="moon";bgcolor="black";txcolor="white";setUI("./Icons/Moon UI.png");}
+    else             {mode="sun";bgcolor="white";txcolor="black";setUI("./Icons/Sun UI.png");}
   }
 
  const getStyle=(item)=>
@@ -25,7 +26,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
  });
 
   return(
-    <div style={{display:'flex',border:'1px solid blue',borderRadius:8,backgroundColor:"white"}}>
+    <div style={{display:'flex',border:'1px solid blue',borderRadius:8,backgroundColor:bgcolor}}>
       <h2 style={{color:'blue',fontSize:30,marginLeft:30,marginRight:200}}>DARYL ANTONY LUIZ</h2>
       <h2 style={getStyle('Home')} onMouseEnter={()=>setHoveredItem('Home')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToHome} >Home</h2>
       <h2 style={getStyle('About')} onMouseEnter={()=>setHoveredItem('About')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToAbout}>About</h2>
@@ -41,6 +42,24 @@ function Home()
 {
   const Ico='./Icons/';
   const [Hovereditem,setHoveredItem]=useState(null);
+  //"Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
+  let jokes=[
+             "Why do programmers prefer dark mode? Because light attracts bugs!",
+             "What did the computer do at lunchtime? Had a byte!",
+             "How do you comfort a JavaScript bug? You console it!",
+             "What’s a computer’s favorite snack? Microchips!",
+             "What’s a programmer’s favorite place to hang out? The Foo Bar!",
+             "Why did the computer break up with the internet? There were too many connections!",
+             "What’s a computer’s least favorite food? Spam!",
+             "Why did the programmer go broke? Because he lost his cache!",
+             'What did the Java code say to the C code? "You have no class!"',
+             "Why do Java developers wear glasses? Because they can’t C#!",
+             "Why was the computer cold? It left its Windows open!",
+             "Why did the computer go to therapy? It had too many bytes!"
+            ];
+  const now=new Date();
+  const hour=now.toLocaleTimeString()[0];
+
   return(
     <div style={{marginTop:10}}>
       <div style={{display:"flex"}}>
@@ -54,7 +73,7 @@ function Home()
         </div>
       </div>
 
-      <p style={{marginTop:10,marginBottom:5,marginLeft:30,fontFamily:'papyrus',color:'#14e70d',fontSize:25,fontWeight:'bold',animation:'fadeInOut 3s infinite'}}>" Any fool can write code that a computer can understand. Good programmers write code that humans can understand. "</p>
+      <p style={{marginTop:10,marginBottom:5,marginLeft:80,fontFamily:'papyrus',color:'#14e70d',fontSize:25,fontWeight:'bold',animation:'fadeInOut 3s infinite'}}>{jokes[hour%12]}</p> {/*12 hours*/}
       
       <div className="Icon pins" style={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'lightblue',marginLeft:250,marginTop:2,borderRadius:'70px',width:300,height:60}}>
         <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:0.5,width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onMouseEnter={()=>setHoveredItem('Whatsapp')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://web.whatsapp.com/")}><img src={Ico+"Whatsapp icon 21.png"} alt="Whatsapp icon" style={{borderRadius:'70px',width:50}}/></button>
@@ -99,14 +118,14 @@ function About()
           <h1>Programming Languages</h1>
             <div className="Coding Lang" style={{borderRadius:'10px'}}>
               <ul style={{display:'flex',flexWrap:'wrap',padding:0,margin:0,width:550}}>
-                {plang.map((item,index)=>(<p key={index} style={{display:'flex',margin:'10px',backgroundColor:'#14e70d',fontSize:20,fontWeight:'bold',borderRadius:'10px',padding:5,width:150,justifyContent:'center'}}>{item}</p>))}
+                {plang.map((item,index)=>(<p key={index} class="greenbutton1">{item}</p>))}
               </ul>
             </div>
 
           <h1>Frontend</h1>
           <div className="Frontend" style={{ borderRadius:'10px' }}>
             <ul style={{display:'flex',flexWrap:'wrap',padding:0,margin:0,width:550}}>
-              {fl.map((item, index) => (<p key={index} style={{display:'flex',margin:'10px',backgroundColor:'#14e70d',fontSize:20,fontWeight:'bold',borderRadius:'10px',padding:5,width:150,justifyContent:'center'}}>{item}</p>))}
+              {fl.map((item, index) => (<p key={index} class="greenbutton1">{item}</p>))}
             </ul>
           </div>
 
@@ -114,7 +133,7 @@ function About()
             <h1>Backend</h1>
             <div className="Backend" style={{borderRadius:'10px'}}>
               <ul style={{display:'flex',flexWrap:'wrap',padding:0,margin:0,width:550}}>
-                {bl.map((item,index)=>(<p key={index} style={{display:'flex',margin:'10px',backgroundColor:'#14e70d',fontSize:20,fontWeight:'bold',borderRadius:'10px',padding:5,width:150,justifyContent:'center'}}>{item}</p>))}
+                {bl.map((item,index)=>(<p key={index} class="greenbutton1">{item}</p>))}
               </ul>
             </div>
           </div>
@@ -124,21 +143,21 @@ function About()
         <div className="Technical">
           <h1>Technical Skills</h1>
           <ul>
-            {tskills.map((item,index)=>(<p key={index} style={{display:'flex',width:200,backgroundColor:'#14e70d',borderRadius:10,padding:'5px 5px 5px 5px',justifyContent:'center',alignContent:'center',fontWeight:'bold',fontSize:20}}>{item}</p>))}
+            {tskills.map((item,index)=>(<p key={index} className="greenbutton2">{item}</p>))}
           </ul>
         </div>
 
         <div className="Non Technical" style={{marginLeft:200}}>
           <h1>Non Technical Skills</h1>
           <ul>
-            {ntskills.map((item,index)=>(<p key={index} style={{display:'flex',width:200,backgroundColor:'#14e70d',borderRadius:10,padding:'5px 5px 5px 5px',justifyContent:'center',alignContent:'center',fontWeight:'bold',fontSize:20}}>{item}</p>))}
+            {ntskills.map((item,index)=>(<p key={index} className="greenbutton2">{item}</p>))}
           </ul>
         </div>
 
         <div className="Language" style={{marginLeft:150}}>
           <h1>Languages Known</h1>
           <ul>
-            {lang.map((item,index)=>(<p key={index} style={{display:'flex',width:200,backgroundColor:'#14e70d',borderRadius:10,padding:'5px 5px 5px 5px',justifyContent:'center',alignContent:'center',fontWeight:'bold',fontSize:20}}>{item}</p>))}
+            {lang.map((item,index)=>(<p key={index} className="greenbutton2">{item}</p>))}
           </ul>
         </div>
 
