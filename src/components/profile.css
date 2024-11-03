@@ -14,7 +14,7 @@
   
 .modeIcon {border-radius: 70px;width: 50px;}
 
-.greenbutton1 
+.but1 
 {
  display: flex;
  margin: 10px;
@@ -30,13 +30,13 @@
  /*transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;*/
 }
   
-.greenbutton1:hover 
+/*.but1:hover 
 {
  border-color: #00ff00;
  box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
-}
+}*/
   
-.greenbutton2 
+.but2 
 {
  display: flex;
  width: 200px;
@@ -50,8 +50,22 @@
  font-size: 20px; 
  /*transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;*/
 }
-  
-.greenbutton2:hover 
+
+/*.but2:hover 
+{
+ border-color: #00ff00;
+ box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+}*/
+
+.bluetheme {background-color: #40FFFF;}
+.bluetheme:hover
+{
+ border-color: #33FFFF;
+ box-shadow: 0 0 20px #33FFFF, 0 0 20px #33FFFF, 0 0 60px #33FFFF;
+}
+
+.greentheme{background-color: #14e70d;}
+.greentheme:hover
 {
  border-color: #00ff00;
  box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;

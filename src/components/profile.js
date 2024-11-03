@@ -4,30 +4,39 @@ import "./profile.css";
 let mode="sun";
 let bgcolor="white";
 let txcolor="black";
+//let col="40ccff";
 let UI="./Icons/Moon UI.png";
 
+//Handle Dark/Light Mode
 function chmod()
 {
-  if(mode==="sun") {mode="moon";UI="./Icons/Moon UI.png";bgcolor="black";txcolor="white"}
-  else             {mode="sun";UI="./Icons/Sun UI.png";bgcolor="white";txcolor="black"}
+  if(mode==="sun") {mode="moon";UI="./Icons/Moon UI.png";bgcolor="black";txcolor="white";}
+  else             {mode="sun";UI="./Icons/Sun UI.png";bgcolor="white";txcolor="black";}
 }
 
 function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact,isH})
 {
+ //Effects works well with "blue" or "green" but not hex colors
+  let col="blue"//"#33aaff";
+  let lightcol="lightblue"//"#33FFFF";
+
+  if(bgcolor==="white") {col="blue";lightcol="lightblue";}
+  else if(bgcolor==="black") {col="lime";lightcol="springgreen";}
+
  const [Hovereditem,setHoveredItem]=useState(null);
 
  const getStyle=(item)=>
  ({
   fontSize:Hovereditem===item?32:30,
   textDecoration:Hovereditem===item?'underline':'none',
-  color:Hovereditem===item?'lightblue':'blue',
+  color:Hovereditem===item?lightcol:col,
   marginLeft:40,
   transition:'font-size 0.5s, text-decoration 0.5s, color 0.5s'
  });
 
   return(
-    <div style={{display:(isH)?'flex':'flex',border:'1px solid blue',borderRadius:8}}>
-      <h2 style={{color:'blue',fontSize:30,marginLeft:30,marginRight:200}}>DARYL ANTONY LUIZ</h2>
+    <div style={{display:(isH)?'flex':'flex',border:'1px solid '+col,borderRadius:8}}>
+      <h2 style={{color:col,fontSize:30,marginLeft:30,marginRight:200}}>DARYL ANTONY LUIZ</h2>
       <h2 style={getStyle('Home')} onMouseEnter={()=>setHoveredItem('Home')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToHome} >Home</h2>
       <h2 style={getStyle('About')} onMouseEnter={()=>setHoveredItem('About')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToAbout}>About</h2>
       <h2 style={getStyle('Works')} onMouseEnter={()=>setHoveredItem('Works')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToWorks}>Works</h2>
@@ -41,6 +50,12 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
 
 function Home({isH})
 {
+  let col="blue";//"#40ccff";
+  let lightcol="lightblue";
+
+  if(mode==="sun") {col="blue";lightcol="lightblue";}//"#40ccff";
+  else if(mode==="moon") {col="lime";lightcol="springgreen";}//"14E70D";
+
   const Ico='./Icons/';
   const [Hovereditem,setHoveredItem]=useState(null);
   
@@ -61,21 +76,20 @@ function Home({isH})
             ];
   const now=new Date();
   const hour=now.toLocaleTimeString()[0];
-
   return(
     <div style={{marginTop:10}}>
       <div style={{display:"flex"}}>
         <div className="Title" style={{width:800,borderRadius:30,display:'inline-block'}}>
-         <p style={{color:(Hovereditem==='Daryl')?'lightblue':'',width:500,marginLeft:200,marginBottom:5,marginTop:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',wordSpacing:30,transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>DARYL ANTONY</p>
-         <p style={{color:(Hovereditem==='Daryl')?'lightblue':'',width:130,marginLeft:350,marginTop:5,marginBottom:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>LUIZ</p>
+         <p style={{color:(Hovereditem==='Daryl')?lightcol:'',width:500,marginLeft:200,marginBottom:5,marginTop:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',wordSpacing:30,transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>DARYL ANTONY</p>
+         <p style={{color:(Hovereditem==='Daryl')?lightcol:'',width:130,marginLeft:350,marginTop:5,marginBottom:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>LUIZ</p>
          <p style={{width:800,marginLeft:80,fontSize:30,display:'inline-block'}}>Web developer - App Developer - Database management - Video Editor - Animation Maker - Teacher - Song Writer</p>
         </div>
         <div className="Profile Image" style={{display:'inline-block',marginLeft:150}}>
-          <img src="./Daryl Photo 4 cropped.jpg" alt="Daryl's profile" style={{width:300,height:380,border:'1px solid '+txcolor,borderRadius:30,animation:' float 3s infinite'}}/>
+          <img src="./Daryl Photo 4 cropped.jpg" alt="Daryl's profile" style={{width:300,height:380,border:'1px solid '+{txcolor},borderRadius:30,animation:' float 3s infinite'}}/>
         </div>
       </div>
 
-      <p style={{marginTop:10,marginBottom:5,marginLeft:80,fontFamily:'papyrus',color:'#14e70d',fontSize:25,fontWeight:'bold',animation:'fadeInOut 3s infinite'}}>{jokes[hour%12]}</p> {/*12 hours*/}
+      <p style={{marginTop:10,marginBottom:5,marginLeft:80,fontFamily:'papyrus',color:col,fontSize:25,fontWeight:'bold',animation:'fadeInOut 3s infinite'}}>{jokes[hour%12]}</p> {/*12 hours*/}
       
       <div className="Icon pins" style={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'lightblue',marginLeft:250,marginTop:2,borderRadius:'70px',width:300,height:60}}>
         <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:0.5,width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onMouseEnter={()=>setHoveredItem('Whatsapp')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://web.whatsapp.com/")}><img src={Ico+"Whatsapp icon 21.png"} alt="Whatsapp icon" style={{borderRadius:'70px',width:50}}/></button>
@@ -120,14 +134,14 @@ function About()
           <h1>Programming Languages</h1>
             <div className="Coding Lang" style={{borderRadius:'10px'}}>
               <ul style={{display:'flex',flexWrap:'wrap',padding:0,margin:0,width:550}}>
-                {plang.map((item,index)=>(<p key={index} class="greenbutton1">{item}</p>))}
+                {plang.map((item,index)=>(<p key={index} class={`but1 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
               </ul>
             </div>
 
           <h1>Frontend</h1>
           <div className="Frontend" style={{ borderRadius:'10px' }}>
             <ul style={{display:'flex',flexWrap:'wrap',padding:0,margin:0,width:550}}>
-              {fl.map((item, index) => (<p key={index} class="greenbutton1">{item}</p>))}
+              {fl.map((item, index) => (<p key={index} class={`but1 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
             </ul>
           </div>
 
@@ -135,7 +149,7 @@ function About()
             <h1>Backend</h1>
             <div className="Backend" style={{borderRadius:'10px'}}>
               <ul style={{display:'flex',flexWrap:'wrap',padding:0,margin:0,width:550}}>
-                {bl.map((item,index)=>(<p key={index} class="greenbutton1">{item}</p>))}
+                {bl.map((item,index)=>(<p key={index} class={`but1 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
               </ul>
             </div>
           </div>
@@ -145,21 +159,21 @@ function About()
         <div className="Technical">
           <h1 style={{marginLeft:30}}>Technical Skills</h1>
           <ul>
-            {tskills.map((item,index)=>(<p key={index} className="greenbutton2">{item}</p>))}
+            {tskills.map((item,index)=>(<p key={index} class={`but2 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
           </ul>
         </div>
 
         <div className="Non Technical" style={{marginLeft:200}}>
           <h1>Non Technical Skills</h1>
           <ul>
-            {ntskills.map((item,index)=>(<p key={index} className="greenbutton2">{item}</p>))}
+            {ntskills.map((item,index)=>(<p key={index} class={`but2 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
           </ul>
         </div>
 
         <div className="Language" style={{marginLeft:150}}>
           <h1>Languages Known</h1>
           <ul>
-            {lang.map((item,index)=>(<p key={index} className="greenbutton2">{item}</p>))}
+            {lang.map((item,index)=>(<p key={index} class={`but2 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
           </ul>
         </div>
 
@@ -388,11 +402,11 @@ export default function Profile()
         <Header scrollToHome={()=>scrollTo(homeRef)} scrollToAbout={()=>scrollTo(aboutRef)}
                 scrollToWorks={()=>scrollTo(worksRef)} scrollToCertificates={()=>scrollTo(certificatesRef)}
                 scrollToContact={()=>scrollTo(contactRef)} isH={Hrviewed}/></div>
-      <div ref={homeRef}><Home isH={Hmviewed}/></div>
-      <div ref={aboutRef}><About isA={aviewed}/></div>
-      <div ref={worksRef}><Works isW={wviewed}/></div>
+      <div ref={homeRef}>        <Home         isH={Hmviewed}/></div>
+      <div ref={aboutRef}>       <About        isA={aviewed}/></div>
+      <div ref={worksRef}>       <Works        isW={wviewed}/></div>
       <div ref={certificatesRef}><Certificates isC={cviewed}/></div>
-      <div ref={contactRef}><Contacts isC={conviewed} scrollToHeader={()=>scrollTo(headerRef)}/></div>
+      <div ref={contactRef}>     <Contacts     isC={conviewed} scrollToHeader={()=>scrollTo(headerRef)}/></div>
     </div>
   );
 }
@@ -406,7 +420,85 @@ Light grey - #bab6b6
 Light green - #14e70d
 Light blue - #16eee6
 
+Available shades of blue,green:
+Shades of Blue:
+LightBlue: #ADD8E6
+SkyBlue: #87CEEB
+DeepSkyBlue: #00BFFF
+DodgerBlue: #1E90FF
+CornflowerBlue: #6495ED
+SteelBlue: #4682B4
+RoyalBlue: #4169E1
+Blue: #0000FF
+MediumBlue: #0000CD
+DarkBlue: #00008B
+Navy: #000080
+MidnightBlue: #191970
+PowderBlue: #B0E0E6
+LightSteelBlue: #B0C4DE
+
+Shades of Green:
+LightGreen: #90EE90
+PaleGreen: #98FB98
+MediumSpringGreen: #00FA9A
+SpringGreen: #00FF7F
+Lime: #00FF00
+LimeGreen: #32CD32
+MediumSeaGreen: #3CB371
+SeaGreen: #2E8B57
+ForestGreen: #228B22
+Green: #008000
+DarkGreen: #006400
+YellowGreen: #9ACD32
+OliveDrab: #6B8E23
+DarkOliveGreen: #556B2F
+Teal: #008080
+
+Shades of Red:
+LightCoral: #F08080
+Salmon: #FA8072
+DarkSalmon: #E9967A
+LightSalmon: #FFA07A
+Crimson: #DC143C
+Red: #FF0000
+FireBrick: #B22222
+DarkRed: #8B0000
+IndianRed: #CD5C5C
+Tomato: #FF6347
+Coral: #FF7F50
+Maroon: #800000
+
+Shades of Yellow:
+LightYellow: #FFFFE0
+LemonChiffon: #FFFACD
+LightGoldenRodYellow: #FAFAD2
+PapayaWhip: #FFEFD5
+Moccasin: #FFE4B5
+PeachPuff: #FFDAB9
+PaleGoldenRod: #EEE8AA
+Khaki: #F0E68C
+Yellow: #FFFF00
+Gold: #FFD700
+DarkKhaki: #BDB76B
+
+Shades of Grey:
+Gainsboro: #DCDCDC
+LightGray / LightGrey: #D3D3D3
+Silver: #C0C0C0
+DarkGray / DarkGrey: #A9A9A9
+Gray / Grey: #808080
+DimGray / DimGrey: #696969
+SlateGray / SlateGrey: #708090
+DarkSlateGray / DarkSlateGrey: #2F4F4F
+Black: #000000 (technically the darkest grey)
+
 For alignment to work,first put display:'flex'
 
 For deploying website online follow https://youtu.be/7wzuievFjrk?si=2MM_DNYPweNbGtvM (through github)
+
+For dark mode to work fine:
+* style the parent <div> component of App() with bgcolor and txcolor
+* In Header(), make some event say onMouseEnter={()=>setViewed(true)} 
+  and onMouseLeave={()=>setViewed(false)} on its parent <div> to 
+  trigger change/update to make the whole web dark/light.
 */
