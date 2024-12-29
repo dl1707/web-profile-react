@@ -86,7 +86,7 @@ function Home({isH})
         </div>
 
         <div className="Profile Image" style={{display:'inline-block',marginLeft:150}}>
-          <img src="./Daryl Photo 4 cropped.jpg" alt="Daryl's profile" style={{width:300,height:380,border:'10px solid '+txcolor,borderRadius:30,animation:' float 3s infinite'}}/>
+          <img src="./Daryl Photo 4 cropped.jpg" alt="Daryl's profile" style={{width:300,height:380,border:'1px solid '+txcolor,borderRadius:30,animation:' float 3s infinite'}}/>
         </div>
       </div>
 
