@@ -84,8 +84,9 @@ function Home({isH})
          <p style={{color:(Hovereditem==='Daryl')?lightcol:'',width:130,marginLeft:350,marginTop:5,marginBottom:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>LUIZ</p>
          <p style={{width:800,marginLeft:80,fontSize:30,display:'inline-block'}}>Web developer - App Developer - Database management - Video Editor - Animation Maker - Teacher - Song Writer</p>
         </div>
+
         <div className="Profile Image" style={{display:'inline-block',marginLeft:150}}>
-          <img src="./Daryl Photo 4 cropped.jpg" alt="Daryl's profile" style={{width:300,height:380,border:'1px solid '+{txcolor},borderRadius:30,animation:' float 3s infinite'}}/>
+          <img src="./Daryl Photo 4 cropped.jpg" alt="Daryl's profile" style={{width:300,height:380,border:'10px solid '+{txcolor},borderRadius:30,animation:' float 3s infinite'}}/>
         </div>
       </div>
 
