@@ -273,9 +273,10 @@ function Certificates({isC})
            {name:'Microsoft Intrnforte Internship',img:'Intrnforte Internship Certificate.jpg',ht:250,wt:420},
            {name:'NPTEL Swayam ML Course',img:'ML NPTEL MOOC Certificate.jpg',ht:250,wt:420},
            {name:'Gate 2024 Score Card',img:'Gate score 2024.png',ht:250,wt:420},
-           {name:'Google ADA Course 1',img:'Google ADA Course 1.png',ht:250,wt:420},
-           {name:'Google ADA Course 2',img:'Google ADA Course 2.png',ht:250,wt:420},
-           {name:'Google ADA Course 3',img:'Google ADA Course 3.png',ht:250,wt:420}];
+           {name:'NPTEL Swayam DL Course',img:'NPTEL Swayam Deep Learning-IIT Ropar Result.png',ht:250,wt:420},
+           {name:'Data Analytics Course 1',img:'Google ADA Course 1.png',ht:250,wt:420},
+           {name:'Data Analytics Course 2',img:'Google ADA Course 2.png',ht:250,wt:420},
+           {name:'Data Analytics Course 3',img:'Google ADA Course 3.png',ht:250,wt:420}];
   return(
     <div>
       <h1 style={{marginLeft:600,marginTop:100}}>Certificates</h1>
