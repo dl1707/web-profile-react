@@ -90,7 +90,7 @@ function Home({isH})
         </div>
       </div>
 
-      <p style={{marginTop:10,marginBottom:5,marginLeft:80,fontFamily:'papyrus',color:col,fontSize:25,fontWeight:'bold',animation:'fadeInOut 3s infinite'}}>{jokes[hour%12]}:Hour{hour}</p> {/*12 hours*/}
+      <p style={{marginTop:10,marginBottom:5,marginLeft:80,fontFamily:'papyrus',color:col,fontSize:25,fontWeight:'bold',animation:'fadeInOut 3s infinite'}}>{jokes[hour%12]}</p> {/*12 hours*/}
       
       <div className="Icon pins" style={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'lightblue',marginLeft:250,marginTop:2,borderRadius:'70px',width:300,height:60}}>
         <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:0.5,width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onMouseEnter={()=>setHoveredItem('Whatsapp')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://web.whatsapp.com/")}><img src={Ico+"Whatsapp icon 21.png"} alt="Whatsapp icon" style={{borderRadius:'70px',width:50}}/></button>
