@@ -75,7 +75,7 @@ function Home({isH})
              "Why did the computer go to therapy? It had too many bytes!"
             ];
   const now=new Date();
-  const hour=now.getHours(); //now.toLocaleTimeString()[0];
+  const hour=now.getHours(); //now.toLocaleTimeString()[0];->localetimestring works only for 1-9. For 10 to 19, [0] part returns 1,20 to 24, [0] returns 2
   return(
     <div style={{marginTop:10}}>
       <div style={{display:"flex"}}>
