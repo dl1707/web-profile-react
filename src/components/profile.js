@@ -75,7 +75,7 @@ function Home({isH})
              "Why did the computer go to therapy? It had too many bytes!"
             ];
   const now=new Date();
-  const hour=now.toLocaleTimeString()[0];
+  const hour=now.getHours(); //now.toLocaleTimeString()[0];
   return(
     <div style={{marginTop:10}}>
       <div style={{display:"flex"}}>
