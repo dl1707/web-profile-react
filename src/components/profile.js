@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
+import { useNavigate } from "react-router-dom";
 import "./profile.css";
 
 let mode="sun";
@@ -6,6 +7,8 @@ let bgcolor="white";
 let txcolor="black";
 //let col="40ccff";
 let UI="./Icons/Moon UI.png";
+
+const navigate=useNavigate();
 
 //Handle Dark/Light Mode
 function chmod()
@@ -226,8 +229,8 @@ function Works({isW})
       {
        setcurIdx((curIdx)=>curIdx+1);
        setFade(true)
-      },500);
-    },2000);
+      },500);   //Time taken for fadeout
+    },2000);  //Time taken for fadein
 
     return ()=>clearInterval(interval);
   },[]);
@@ -239,7 +242,7 @@ function Works({isW})
       <ul style={{padding:0,margin:0,overflow:'hidden'}}>  {/*overflow to remove Xscrollbar*/}
         {works.map((item,index)=>
         (
-         <div key={index} style={Imagestyle(index)}>
+         <div key={index} style={Imagestyle(index)} onClick={()=>navigate("/displayWork")}>
           <p style={{fontSize:30,marginBottom:1}}>{item.name}</p>
           <img src={Folder+item.img[curIdx%item.img.length]} alt={item.name} style={{border:'1px solid black',borderRadius:'40px',padding:0,opacity:fade?1:0,transition:'opacity 0.5s ease-in-out'}} height="500" width="300"/>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import Profile from './components/profile';
+import WebRoutes from "./components/WebRoutes";
 
 export default function App()
 {
-  return(<div><Profile/></div>);
+  return(<WebRoutes/>);
 }
