@@ -8,8 +8,6 @@ let txcolor="black";
 //let col="40ccff";
 let UI="./Icons/Moon UI.png";
 
-const navigate=useNavigate();
-
 //Handle Dark/Light Mode
 function chmod()
 {
@@ -193,6 +191,7 @@ function About()
 function Works({isW})
 {
   const vis=isW;
+  const navigate=useNavigate();
   const Imagestyle=(idx)=>
   ({
     padding:0,
