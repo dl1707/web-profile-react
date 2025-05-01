@@ -199,6 +199,7 @@ function Works({isW})
     marginTop:20,
     display:'inline-block',
     opacity:0,
+    cursor:'pointer',
     animation:(vis)?(idx%2===0?'slideInLeft 0.5s forwards':'slideInRight 0.5s forwards'):(idx%2===0?'slideOutLeft 0.5s forwards':'slideOutRight 0.5s forwards'),    //First cert slideleft,sec cert slideright
     animationDelay:'0.1s'
   })
