@@ -34,7 +34,8 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
   textDecoration:Hovereditem===item?'underline':'none',
   color:Hovereditem===item?lightcol:col,
   marginLeft:40,
-  transition:'font-size 0.5s, text-decoration 0.5s, color 0.5s'
+  cursor:'pointer',
+  transition:'font-size 0.5s, text-decoration 0.5s, color 0.5s',
  });
 
   return(
