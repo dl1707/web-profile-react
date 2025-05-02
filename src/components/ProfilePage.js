@@ -244,10 +244,12 @@ function Works({isW})
       <ul style={{padding:0,margin:0,overflow:'hidden'}}>  {/*overflow to remove Xscrollbar*/}
         {works.map((item,index)=>
         (
+         <li key={index} style={{ listStyle: 'none' }}>
          <div key={index} style={Imagestyle(index)} onClick={()=>{alert("Navigating you to work page");navigate("/displayWork")}}>
           <p style={{fontSize:30,marginBottom:1}}>{item.name}</p>
           <img src={Folder+item.img[curIdx%item.img.length]} alt={item.name} style={{border:'1px solid black',borderRadius:'40px',padding:0,opacity:fade?1:0,transition:'opacity 0.5s ease-in-out'}} height="500" width="300"/>
         </div>
+        </li>
         ))}
       </ul>
     </div>
