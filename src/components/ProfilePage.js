@@ -191,7 +191,7 @@ function About()
 function Works({isW})
 {
   const vis=isW;
-  // const navigate=useNavigate();
+  const navigate=useNavigate();
   const Imagestyle=(idx)=>
   ({
     padding:0,
@@ -205,7 +205,7 @@ function Works({isW})
   })
 
   const Folder='./Works/'
-
+  
   const [curIdx,setcurIdx]=useState(0);
   const [fade,setFade]=useState(true);
 
