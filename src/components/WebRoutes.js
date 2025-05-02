@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import Profile from './profile';
+import ProfilePage from './ProfilePage';
 import WorkPage from './WorkPage';
 
 export default function WebRoutes() {
@@ -8,7 +8,7 @@ export default function WebRoutes() {
     <div>
         <Router>
           <Routes>
-            <Route path='/' element={<Profile/>}/>
+            <Route path='/' element={<ProfilePage/>}/>
             <Route path='/displayWork' element={<WorkPage/>}/>
           </Routes>
         </Router>
