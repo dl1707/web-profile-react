@@ -88,7 +88,7 @@ function Home({isH})
         </div>
 
         {/* Profile Photo */}
-        <div className="Profile Image" style={{display:'inline-block',marginLeft:150, boxShadow: '0 5px 5px black'}}>
+        <div className="Profile Image" style={{display:'inline-block',marginLeft:150, boxShadow: '0 5px 10px rgba(0, 0, 0, 0.5)'}}>
           <img src="./Daryl Photo 4 cropped.jpg" alt="Daryl's profile" style={{width:300,height:380,border:'3px solid '+txcolor,borderRadius:30,animation:' float 3s infinite'}}/>
         </div>
       </div>
@@ -138,14 +138,14 @@ function About()
           <h1>Programming Languages</h1>
             <div className="Coding Lang" style={{borderRadius:'10px'}}>
               <ul style={{display:'flex',flexWrap:'wrap',padding:0,margin:0,width:550}}>
-                {plang.map((item,index)=>(<p key={index} class={`but1 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
+                {plang.map((item,index)=>(<p key={index} className={`but1 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
               </ul>
             </div>
 
           <h1>Frontend</h1>
           <div className="Frontend" style={{ borderRadius:'10px' }}>
             <ul style={{display:'flex',flexWrap:'wrap',padding:0,margin:0,width:550}}>
-              {fl.map((item, index) => (<p key={index} class={`but1 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
+              {fl.map((item, index) => (<p key={index} className={`but1 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
             </ul>
           </div>
 
@@ -153,7 +153,7 @@ function About()
             <h1>Backend</h1>
             <div className="Backend" style={{borderRadius:'10px'}}>
               <ul style={{display:'flex',flexWrap:'wrap',padding:0,margin:0,width:550}}>
-                {bl.map((item,index)=>(<p key={index} class={`but1 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
+                {bl.map((item,index)=>(<p key={index} className={`but1 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
               </ul>
             </div>
           </div>
@@ -163,21 +163,21 @@ function About()
         <div className="Technical">
           <h1 style={{marginLeft:30}}>Technical Skills</h1>
           <ul>
-            {tskills.map((item,index)=>(<p key={index} class={`but2 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
+            {tskills.map((item,index)=>(<p key={index} className={`but2 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
           </ul>
         </div>
 
         <div className="Non Technical" style={{marginLeft:200}}>
           <h1>Non Technical Skills</h1>
           <ul>
-            {ntskills.map((item,index)=>(<p key={index} class={`but2 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
+            {ntskills.map((item,index)=>(<p key={index} className={`but2 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
           </ul>
         </div>
 
         <div className="Language" style={{marginLeft:150}}>
           <h1>Languages Known</h1>
           <ul>
-            {lang.map((item,index)=>(<p key={index} class={`but2 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
+            {lang.map((item,index)=>(<p key={index} className={`but2 ${(mode==='sun')?'bluetheme':'greentheme'}`}>{item}</p>))}
           </ul>
         </div>
 
@@ -191,7 +191,7 @@ function About()
 function Works({isW})
 {
   const vis=isW;
-  const navigate=0//=useNavigate();
+  const navigate=useNavigate();
   const Imagestyle=(idx)=>
   ({
     padding:0,
@@ -244,7 +244,7 @@ function Works({isW})
       <ul style={{padding:0,margin:0,overflow:'hidden'}}>  {/*overflow to remove Xscrollbar*/}
         {works.map((item,index)=>
         (
-         <div key={index} style={Imagestyle(index)}>
+         <div key={index} style={Imagestyle(index)} onClick={()=>navigate('/web-profile-react/displayWork')}>
           <p style={{fontSize:30,marginBottom:1}}>{item.name}</p>
           <img src={Folder+item.img[curIdx%item.img.length]} alt={item.name} style={{border:'1px solid black',borderRadius:'40px',padding:0,opacity:fade?1:0,transition:'opacity 0.5s ease-in-out'}} height="500" width="300"/>
         </div>
@@ -302,6 +302,7 @@ function Certificates({isC})
 function Contacts({scrollToHeader})
 {
  const [showpopup,setshowpopup]=useState(false);
+ const [isHovered, setIsHovered]=useState(false);
  
  //To detect web end
  useEffect(()=>
@@ -321,17 +322,20 @@ function Contacts({scrollToHeader})
       <h1 style={{color:'blue'}}>Contacts</h1>
       <p><b>Ph No:8075742417</b></p>
       <p><b>darylluiz1707@gmail.com</b></p>
-      {showpopup&&<h1 style={{position: "fixed",
-                              bottom: "20px",
-                              right: "600px",
-                              backgroundColor: "blue",
-                              color: "#fff",
-                              padding: "10px 20px",
-                              borderRadius:50,
-                              cursor: "pointer",
-                              zIndex: 1000,
-                              animation:'slideInBottom 0.5s forwards'}} 
-                              onClick={scrollToHeader}>^</h1>}
+      {showpopup&&
+      <h1 style={{position: "fixed",
+                  bottom: "20px",
+                  right: "600px",
+                  backgroundColor: isHovered ? "lightblue" : "blue",
+                  color: "#fff",
+                  padding: "10px 20px",
+                  borderRadius:50,
+                  cursor: "pointer",
+                  zIndex: 1000,
+                  animation:'slideInBottom 0.5s forwards'}} 
+                  onClick={scrollToHeader}
+                  onMouseEnter={()=>setIsHovered(true)}
+                  onMouseLeave={()=>setIsHovered(false)}>^</h1>}
     </div>
   );
 }
@@ -505,6 +509,15 @@ Black: #000000 (technically the darkest grey)
 For alignment to work,first put display:'flex'
 
 For deploying website online follow https://youtu.be/7wzuievFjrk?si=2MM_DNYPweNbGtvM (through github)
+step 1: npm install gh-pages --save-dev
+step 2:create new repository in gh.
+step 3:Follow the rest of the git commands.
+step 4:Go to package.json->before name, type "homepage": "https://dl1707.github.io/web-profile-react".
+step 5:Under script, 
+    {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    }
 
 For dark mode to work fine:
 * style the parent <div> component of App() with bgcolor and txcolor
