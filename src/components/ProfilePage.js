@@ -200,6 +200,7 @@ function Works({isW})
     display:'inline-block',
     opacity:0,
     cursor:'pointer',
+    listStyle:'none',
     animation:(vis)?(idx%2===0?'slideInLeft 0.5s forwards':'slideInRight 0.5s forwards'):(idx%2===0?'slideOutLeft 0.5s forwards':'slideOutRight 0.5s forwards'),    //First cert slideleft,sec cert slideright
     animationDelay:'0.1s'
   })
@@ -244,8 +245,8 @@ function Works({isW})
       <ul style={{padding:0,margin:0,overflow:'hidden'}}>  {/*overflow to remove Xscrollbar*/}
         {works.map((item,index)=>
         (
-         <li key={index} style={{ listStyle: 'none' }}>
-            <div style={Imagestyle(index)}>
+         <li key={index} style={Imagestyle(index)}>
+            <div>
               <p style={{fontSize:30,marginBottom:1}}>{item.name}</p>
               <img src={Folder+item.img[curIdx%item.img.length]} alt={item.name} style={{border:'1px solid black',borderRadius:'40px',padding:0,opacity:fade?1:0,transition:'opacity 0.5s ease-in-out'}} height="500" width="300"/>
           </div>
