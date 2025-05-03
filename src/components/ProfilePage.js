@@ -191,7 +191,7 @@ function About()
 function Works({isW})
 {
   const vis=isW;
-  const navigate=useNavigate();
+  const navigate=0//=useNavigate();
   const Imagestyle=(idx)=>
   ({
     padding:0,
@@ -245,7 +245,7 @@ function Works({isW})
         {works.map((item,index)=>
         (
          <li key={index} style={{ listStyle: 'none' }}>
-            <div style={Imagestyle(index)} onClick={()=>{alert("Navigating you to work page");navigate("/displayWork")}}>
+            <div style={Imagestyle(index)}>
               <p style={{fontSize:30,marginBottom:1}}>{item.name}</p>
               <img src={Folder+item.img[curIdx%item.img.length]} alt={item.name} style={{border:'1px solid black',borderRadius:'40px',padding:0,opacity:fade?1:0,transition:'opacity 0.5s ease-in-out'}} height="500" width="300"/>
           </div>
