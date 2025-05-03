@@ -1,5 +1,5 @@
 import React from "react";
-import WebRoutes from "./components/WebRoutes";
+import WebRoutes from './WebRoutes';
 
 export default function App()
 {
