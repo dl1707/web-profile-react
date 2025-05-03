@@ -8,8 +8,8 @@ export default function WebRoutes() {
     <div>
         <Router>
           <Routes>
-            <Route path='/' element={<ProfilePage/>}/>
-            <Route path='/displayWork' element={<WorkPage/>}/>
+            <Route path='/' element={<WorkPage/>}/>
+            {/* <Route path='/displayWork' element={<WorkPage/>}/> */}
           </Routes>
         </Router>
     </div>
