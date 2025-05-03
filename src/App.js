@@ -3,6 +3,6 @@ import WebRoutes from './WebRoutes';
 
 export default function App()
 {
-  return(<WebRoutes/>);
-  // return(<h1>Hello this is web profile</h1>);
+  // return(<WebRoutes/>);
+  return(<h1>Hello this is web profile</h1>);
 }
