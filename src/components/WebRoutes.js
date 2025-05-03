@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import ProfilePage from './ProfilePage';
-import WorkPage from './WorkPage';
+import ProfilePage from "./components/ProfilePage";
+import WorkPage from './components/WorkPage';
 
 export default function WebRoutes() {
   return (
