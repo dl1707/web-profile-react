@@ -299,7 +299,7 @@ function Certificates({isC})
         ))}
       </ul>
       {selectedImage&&
-      <div style={{top:'10px', bottom:'10px', left:'10px', right:'10px', backgroundColor:'gray', position:'absolute'}}>
+      <div style={{inset:'0px', backgroundColor:'gray', position:'absolute'}}>
         <div style={{display:'flex', justifyContent:'end'}} onClick={()=>setSelectedImage(null)}>x</div>
         <img src={selectedImage} alt="Selected image"/>
       </div>}
