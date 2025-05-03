@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "./profile.css";
+import "../App.css"
 
 let mode="sun";
 let bgcolor="white";
@@ -37,7 +38,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
  });
 
   return(
-    <div style={{display:(isH)?'flex':'flex',border:'1px solid '+col,borderRadius:8}}>
+    <div className="header" style={{display:(isH)?'flex':'flex',border:'1px solid '+col,borderRadius:8}}>
       <h2 style={{color:col,fontSize:30,marginLeft:30,marginRight:200}}>DARYL ANTONY LUIZ</h2>
       <h2 style={getStyle('Home')} onMouseEnter={()=>setHoveredItem('Home')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToHome} >Home</h2>
       <h2 style={getStyle('About')} onMouseEnter={()=>setHoveredItem('About')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToAbout}>About</h2>
@@ -238,7 +239,7 @@ function Works({isW})
   },[]);
   
   return(
-    <div>
+    <div className="Works">
       <h1 style={{marginLeft:600,marginTop:500}}>Works</h1>
       <h3 style={{marginLeft:70,marginTop:1,marginBottom:1,fontWeight:'bold'}}>See my progress over time...</h3>
       <ul style={{padding:0,margin:0,overflow:'hidden'}}>  {/*overflow to remove Xscrollbar*/}
@@ -258,12 +259,14 @@ function Works({isW})
 function Certificates({isC})
 {
   const vis=isC;
+  const [selectedImage, setSelectedImage]=useState(null);
   const Imagestyle=(idx)=>
   ({
     display:'inline-block',
     margin:10,
     zindex:1,
     opacity:0,
+    cursor:'pointer',
     transition:'opacity 0.5s ease-in',
     animation:(vis)?(idx%3===0?'slideInLeft 0.5s forwards':(idx%3===1?'slideInTop 0.5s forwards':'slideInRight 0.5s forwards')):(idx%3===0?'slideOutLeft 0.5s forwards':(idx%3===1?'slideOutTop 0.5s forwards':'slideOutRight 0.5s forwards')),    //First cert slideleft,sec cert slidetop,third cert slideright
     animationDelay:'0.1s'
@@ -284,17 +287,22 @@ function Certificates({isC})
            {name:'Data Analytics Course 2',img:'Google ADA Course 2.png',ht:250,wt:420},
            {name:'Data Analytics Course 3',img:'Google ADA Course 3.png',ht:250,wt:420}];
   return(
-    <div>
+    <div className="Certificates" style={{position:'relative'}}>
       <h1 style={{marginLeft:600,marginTop:100}}>Certificates</h1>
       <ul style={{padding:0,marginLeft:10,overflow:'hidden'}}>    {/*overflow to remove Xscrollbar*/}
         {C.map((item,index)=>
         (
-          <div key={index} style={Imagestyle(index)}>
+          <div key={index} style={Imagestyle(index)} onClick={()=>setSelectedImage(Folder+item.img)}>
             <p style={{fontSize:20,fontWeight:'bold',padding:0}}>{item.name}</p>
             <img src={Folder+item.img} alt={item.name} height={item.ht} width={item.wt} style={{border:'1px solid black',borderRadius:'10px'}}/>
           </div>
         ))}
       </ul>
+      {selectedImage&&
+      <div style={{top:'10px', bottom:'10px', left:'10px', right:'10px', backgroundColor:'gray', position:'absolute'}}>
+        <div style={{display:'flex', justifyContent:'end'}} onClick={()=>setSelectedImage(null)}>x</div>
+        <img src={selectedImage} alt="Selected image"/>
+      </div>}
     </div>
   );
 }
@@ -415,7 +423,8 @@ export default function ProfilePage()
       <div ref={headerRef} onMouseEnter={()=>setHrviewed(true)} onMouseLeave={()=>setHrviewed(false)}>
         <Header scrollToHome={()=>scrollTo(homeRef)} scrollToAbout={()=>scrollTo(aboutRef)}
                 scrollToWorks={()=>scrollTo(worksRef)} scrollToCertificates={()=>scrollTo(certificatesRef)}
-                scrollToContact={()=>scrollTo(contactRef)} isH={Hrviewed}/></div>
+                scrollToContact={()=>scrollTo(contactRef)} isH={Hrviewed}/>
+      </div>
       <div ref={homeRef}>        <Home         isH={Hmviewed}/></div>
       <div ref={aboutRef}>       <About        isA={aviewed}/></div>
       <div ref={worksRef}>       <Works        isW={wviewed}/></div>
@@ -518,6 +527,8 @@ step 5:Under script,
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     }
+step 6:npm run deploy
+step 7:Go to github -> that repository -> settings -> pages -> click on link at Your site is live at https://dl1707.github.io/web-profile-react/.
 
 For dark mode to work fine:
 * style the parent <div> component of App() with bgcolor and txcolor
