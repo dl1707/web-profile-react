@@ -14,7 +14,7 @@ export default function WorkPage()
       {image.map((item,index)=>
       (
         <div key={index}>
-          <img src={Folder+item[index]} alt={index} style={{border:'1px solid black',borderRadius:'32px',padding:0}} height="520" width="320"/>
+          <img src={Folder+item} alt={index} style={{border:'1px solid black',borderRadius:'32px',padding:0}} height="520" width="320"/>
         </div>
       ))}
       </ul>
