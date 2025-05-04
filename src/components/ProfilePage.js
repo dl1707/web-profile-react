@@ -299,7 +299,7 @@ function Certificates({isC})
         ))}
       </ul>
       {selectedImage&&
-      <div style={{display:'flex',flexDirection:'column',height:'800px',width:'800px', backgroundColor:'gray', position:'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', borderRadius:'10px', zIndex:1000}}>
+      <div style={{display:'flex',flexDirection:'column',height:'580px',width:'580px', backgroundColor:'gray', position:'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', borderRadius:'10px', zIndex:1000}}>
         <div style={{alignSelf:'flex-end',cursor:'pointer',textAlign:'center', padding:'5px 10px', borderRadius:'50%', backgroundColor:"lightgray", marginRight:'10px'}} onClick={()=>setSelectedImage(null)}>x</div>
         <div style={{display:'flex', justifyContent:'center'}}>
           <img src={selectedImage} alt="selected item" style={{width:550, height: 550}}/>
