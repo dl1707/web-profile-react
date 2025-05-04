@@ -10,7 +10,7 @@ export default function WorkPage()
   return (
     <div>
       <h1>{name}</h1>
-      <ul style={{display:'flex',flexWrap:'wrap', justifyContent:'start', gap:'30px'}}>
+      <ul style={{display:'flex',flexWrap:'wrap', justifyContent:'start', gap:'70px'}}>
       {image.map((item,index)=>
       (
         <div key={index}>
