@@ -245,7 +245,7 @@ function Works({isW})
       <ul style={{padding:0,margin:0,overflow:'hidden'}}>  {/*overflow to remove Xscrollbar*/}
         {works.map((item,index)=>
         (
-         <div key={index} style={Imagestyle(index)} onClick={()=>navigate('/web-profile-react/displayWork')}>
+         <div key={index} style={Imagestyle(index)} onClick={()=>navigate('/web-profile-react/displayWork', {state:{item}})}>
           <p style={{fontSize:30,marginBottom:1}}>{item.name}</p>
           <img src={Folder+item.img[curIdx%item.img.length]} alt={item.name} style={{border:'1px solid black',borderRadius:'40px',padding:0,opacity:fade?1:0,transition:'opacity 0.5s ease-in-out'}} height="500" width="300"/>
         </div>
@@ -300,7 +300,7 @@ function Certificates({isC})
       </ul>
       {selectedImage&&
       <div style={{display:'flex',flexDirection:'column',gap:'10px',height:'550px',width:'720px', backgroundColor:'gray', position:'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', borderRadius:'10px', zIndex:1000}}>
-        <div style={{alignSelf:'flex-end',cursor:'pointer',textAlign:'center', padding:'3px 8px', borderRadius:'50%', backgroundColor:"lightgray", marginRight:'10px'}} onClick={()=>setSelectedImage(null)}>x</div>
+        <div style={{alignSelf:'flex-end',cursor:'pointer',textAlign:'center', padding:'3px 8px', borderRadius:'50%', backgroundColor:"lightgray", marginRight:'10px', marginTop:'5px'}} onClick={()=>setSelectedImage(null)}>x</div>
         <div style={{display:'flex', justifyContent:'center'}}>
           <img src={selectedImage} alt="selected item" style={{ height: 480, width:700}}/>
         </div>
