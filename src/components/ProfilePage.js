@@ -3,18 +3,18 @@ import { useNavigate } from "react-router-dom";
 import "./profile.css";
 import "../App.css"
 
-// let mode="sun";
-// let bgcolor="white";
-// let txcolor="black";
-// //let col="40ccff";
-// let UI="./Icons/Moon UI.png";
+let mode="sun";
+let bgcolor="white";
+let txcolor="black";
+//let col="40ccff";
+let UI="./Icons/Moon UI.png";
 
-// //Handle Dark/Light Mode
-// function chmod()
-// {
-//   if(mode==="sun") {mode="moon";UI="./Icons/Moon UI.png";bgcolor="black";txcolor="white";}
-//   else             {mode="sun";UI="./Icons/Sun UI.png";bgcolor="white";txcolor="black";}
-// }
+//Handle Dark/Light Mode
+function chmod()
+{
+  if(mode==="sun") {mode="moon";UI="./Icons/Moon UI.png";bgcolor="black";txcolor="white";}
+  else             {mode="sun";UI="./Icons/Sun UI.png";bgcolor="white";txcolor="black";}
+}
 
 function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,scrollToContact,isH})
 {
@@ -367,17 +367,17 @@ export default function ProfilePage()
   const [cviewed,setcviewed]=useState(false);
   const [conviewed,setconviewed]=useState(false);
 
-  const [mode, setMode]=useState("light");
-  const [bgcolor, setBgcolor]=useState("white");
-  const [txcolor, setTxcolor]=useState("black");
-  const [UI, setUI]=useState("./Icons/Moon UI.png")
+  // const [mode, setMode]=useState("light");
+  // const [bgcolor, setBgcolor]=useState("white");
+  // const [txcolor, setTxcolor]=useState("black");
+  // const [UI, setUI]=useState("./Icons/Moon UI.png")
 
-  //Handle Dark/Light Mode
-  useEffect(()=>
-  {
-   if(mode==="sun") {setMode("moon");setUI("./Icons/Moon UI.png");setBgcolor("black");setTxcolor("white");}
-   else             {setMode("sun");setUI("./Icons/Sun UI.png");setBgcolor("white");setTxcolor("black");}
-  },[mode]);
+  // //Handle Dark/Light Mode
+  // useEffect(()=>
+  // {
+  //  if(mode==="sun") {setMode("moon");setUI("./Icons/Moon UI.png");setBgcolor("black");setTxcolor("white");}
+  //  else             {setMode("sun");setUI("./Icons/Sun UI.png");setBgcolor("white");setTxcolor("black");}
+  // },[mode]);
 
   const scrollTo=(xref)=>{xref.current.scrollIntoView({ behavior: 'smooth' });};
 
