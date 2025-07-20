@@ -8,9 +8,9 @@ export default function WorkPage()
   const Folder='./Works/';
 
   return (
-    <div>
+    <div style={{marginLeft:'50px'}}>
       <h1>{name}</h1>
-      <ul style={{display:'flex',flexWrap:'wrap', justifyContent:'start', gap:'70px'}}>
+      <ul style={{display:'flex',flexWrap:'wrap', justifyContent:'start', gap:'100px'}}>
       {image.map((item,index)=>
       (
         <div key={index}>
