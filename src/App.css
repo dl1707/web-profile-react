@@ -26,9 +26,10 @@
     align-items: center;
   }
 
+  .Works {margin-top: 50px;}
   .Works h1
   {
-   margin-top: 800px;
+   margin-top: 700px;
   }
 
   .Works ul{width: 400%; background-color:chartreuse;}
