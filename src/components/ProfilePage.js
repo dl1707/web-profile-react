@@ -434,7 +434,7 @@ export default function ProfilePage()
   }, []);
 
   return(
-    <div style={{backgroundColor:bgcolor,color:txcolor}}>
+    <div style={{backgroundColor:bgcolor,color:txcolor, width:"100%"}}>
       <div ref={headerRef} onMouseEnter={()=>setHrviewed(true)} onMouseLeave={()=>setHrviewed(false)}>
         <Header scrollToHome={()=>scrollTo(homeRef)} scrollToAbout={()=>scrollTo(aboutRef)}
                 scrollToWorks={()=>scrollTo(worksRef)} scrollToCertificates={()=>scrollTo(certificatesRef)}
