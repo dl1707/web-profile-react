@@ -46,7 +46,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
       <h2 style={getStyle('Certificates')} onMouseEnter={()=>setHoveredItem('Certificates')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToCertificates}>Certificates</h2>
       <h2 style={getStyle('Contact')} onMouseEnter={()=>setHoveredItem('Contact')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToContact}>Contact</h2>
 
-      <button className="modeButton" onClick={chmod}><img src={UI} alt="D/B Mode" style={{cursor:'pointer'}}/></button>
+      <button className="modeButton" onClick={chmod}><img src={UI} alt="D/B Mode" style={{cursor:'pointer'}} className="modeIcon"/></button>
     </div>
   );
 }
