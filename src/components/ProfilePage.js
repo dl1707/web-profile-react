@@ -46,7 +46,7 @@ function Header({scrollToHome,scrollToAbout,scrollToWorks,scrollToCertificates,s
       <h2 style={getStyle('Certificates')} onMouseEnter={()=>setHoveredItem('Certificates')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToCertificates}>Certificates</h2>
       <h2 style={getStyle('Contact')} onMouseEnter={()=>setHoveredItem('Contact')} onMouseLeave={()=>setHoveredItem(null)} onClick={scrollToContact}>Contact</h2>
 
-      <button className="modeButton" onClick={()=>setMode(mode=>mode=="sun" ? "moon" : "sun")}><img src={UI} alt="D/B Mode" className="modeIcon"/></button>
+      <button className="modeButton" onClick={()=>setMode(mode=>mode=="sun" ? "moon" : "sun")}><img src={UI} alt="D/B Mode" style={{cursor:'pointer'}}/></button>
     </div>
   );
 }
@@ -80,7 +80,7 @@ function Home({isH})
   const now=new Date();
   const hour=now.getHours(); //now.toLocaleTimeString()[0];->localetimestring works only for 1-9. For 10 to 19, [0] part returns 1,20 to 24, [0] returns 2
   return(
-    <div style={{marginTop:10}}>
+    <div style={{marginTop:10,height:570}}>
       <div style={{display:"flex"}}>
         <div className="Title" style={{width:800,borderRadius:30,display:'inline-block'}}>
          <p style={{color:(Hovereditem==='Daryl')?lightcol:'',width:500,marginLeft:200,marginBottom:5,marginTop:5,fontSize:70,fontWeight:'bold',fontFamily:'Calibri',wordSpacing:30,transition:'color 0.5s'}} onMouseEnter={()=>setHoveredItem('Daryl')} onMouseLeave={()=>setHoveredItem(null)}>DARYL ANTONY</p>
@@ -97,10 +97,10 @@ function Home({isH})
       <p style={{marginTop:10,marginBottom:5,marginLeft:80,fontFamily:'papyrus',color:col,fontSize:25,fontWeight:'bold',animation:'fadeInOut 3s infinite'}}>{jokes[hour%12]}</p> {/*12 hours*/}
       
       <div className="Icon pins" style={{display:'flex',alignItems:'center',justifyContent:'center',backgroundColor:'lightblue',marginLeft:250,marginTop:2,borderRadius:'70px',width:300,height:60}}>
-        <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:0.5,width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onMouseEnter={()=>setHoveredItem('Whatsapp')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://web.whatsapp.com/")}><img src={Ico+"Whatsapp icon 21.png"} alt="Whatsapp icon" style={{borderRadius:'70px',width:50}}/></button>
-        <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:30, width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onMouseEnter={()=>setHoveredItem('Facebook')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://www.facebook.com/profile.php?id=61561993948905")}><img src={Ico+"facebook icon 21.png"} alt="Facebook icon" style={{borderRadius:'70px',width:50}}/></button>
-        <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:30, width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onMouseEnter={()=>setHoveredItem('Instagram')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://www.instagram.com/darylluiz/?next=%2F&hl=en")}><img src={Ico+"Insta icon 21.png"} alt="Instagram icon" style={{borderRadius:'70px',width:50}}/></button>
-        <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:30, width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center'}} onMouseEnter={()=>setHoveredItem('LinkedIn')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://www.linkedin.com/in/daryl-antony-luiz-rajagiri-6ba82727a/")}><img src={Ico+"LinkedIn icon.png"} alt="LinkedIn icon" style={{borderRadius:'70px',width:50}}/></button>
+        <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:0.5,width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer'}} onMouseEnter={()=>setHoveredItem('Whatsapp')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://web.whatsapp.com/")}><img src={Ico+"Whatsapp icon 21.png"} alt="Whatsapp icon" style={{borderRadius:'70px',width:50}}/></button>
+        <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:30, width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer'}} onMouseEnter={()=>setHoveredItem('Facebook')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://www.facebook.com/profile.php?id=61561993948905")}><img src={Ico+"facebook icon 21.png"} alt="Facebook icon" style={{borderRadius:'70px',width:50}}/></button>
+        <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:30, width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer'}} onMouseEnter={()=>setHoveredItem('Instagram')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://www.instagram.com/darylluiz/?next=%2F&hl=en")}><img src={Ico+"Insta icon 21.png"} alt="Instagram icon" style={{borderRadius:'70px',width:50}}/></button>
+        <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:30, width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer'}} onMouseEnter={()=>setHoveredItem('LinkedIn')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://www.linkedin.com/in/daryl-antony-luiz-rajagiri-6ba82727a/")}><img src={Ico+"LinkedIn icon.png"} alt="LinkedIn icon" style={{borderRadius:'70px',width:50}}/></button>
       </div>
       {Hovereditem&&<div style={{backgroundColor:'black',color:'white',width:80,marginLeft:(Hovereditem==='Whatsapp')?260:((Hovereditem==='Facebook')?340:(Hovereditem==='Instagram'?420:500)),opacity:1,animation:'fadeIn 0.5s ease-in'}}>{Hovereditem}</div>}
     </div>
@@ -298,6 +298,7 @@ function Certificates({isC})
           </div>
         ))}
       </ul>
+      {/* View popup */}
       {selectedImage&&
       <div style={{display:'flex',flexDirection:'column',gap:'10px',height:'550px',width:'720px', backgroundColor:'gray', position:'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', borderRadius:'10px', zIndex:1000}}>
         <div style={{alignSelf:'flex-end',cursor:'pointer',textAlign:'center', padding:'3px 8px', borderRadius:'50%', backgroundColor:"lightgray", marginRight:'10px', marginTop:'5px'}} onClick={()=>setSelectedImage(null)}>x</div>
@@ -337,7 +338,7 @@ function Contacts({scrollToHeader})
                   bottom: "20px",
                   right: "600px",
                   backgroundColor: isHovered ? "lightblue" : "blue",
-                  color: "#fff",
+                  color: isHovered ? "#fff" : "#000",
                   padding: "10px 20px",
                   borderRadius:50,
                   cursor: "pointer",
