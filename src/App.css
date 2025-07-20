@@ -9,7 +9,7 @@
 @media (max-width: 768px) {
   .header 
   {
-    width: 550%;
+    width: 350%;
   }
 
   .Skills h1
@@ -31,7 +31,7 @@
    margin-top: 700px;
   }
 
-  .Works ul{width: 200%; background-color:darkgoldenrod;}
+  .Works ul{width: 500%; background-color:chartreuse;}
 
   .Certificates ul{width:200%; background-color: chocolate;}
 }
