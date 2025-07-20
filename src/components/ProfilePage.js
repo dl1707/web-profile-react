@@ -102,7 +102,7 @@ function Home({isH})
         <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:30, width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer'}} onMouseEnter={()=>setHoveredItem('Instagram')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://www.instagram.com/darylluiz/?next=%2F&hl=en")}><img src={Ico+"Insta icon 21.png"} alt="Instagram icon" style={{borderRadius:'70px',width:50}}/></button>
         <button style={{border:'none',borderRadius:'100px',padding:15,marginBottom:1,marginTop:1,marginLeft:30, width:50,height:50,display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer'}} onMouseEnter={()=>setHoveredItem('LinkedIn')} onMouseLeave={()=>setHoveredItem(null)} onClick={()=>window.open("https://www.linkedin.com/in/daryl-antony-luiz-rajagiri-6ba82727a/")}><img src={Ico+"LinkedIn icon.png"} alt="LinkedIn icon" style={{borderRadius:'70px',width:50}}/></button>
       </div>
-      {Hovereditem&&<div style={{backgroundColor:bgcolor,color:txcolor,width:80,padding:5,marginLeft:(Hovereditem==='Whatsapp')?260:((Hovereditem==='Facebook')?340:(Hovereditem==='Instagram'?420:500)),opacity:1,animation:'fadeIn 0.5s ease-in'}}>{Hovereditem}</div>}
+      {Hovereditem&&<div style={{backgroundColor:txcolor,color:bgcolor,width:80,padding:5,marginLeft:(Hovereditem==='Whatsapp')?260:((Hovereditem==='Facebook')?340:(Hovereditem==='Instagram'?420:500)),opacity:1,animation:'fadeIn 0.5s ease-in'}}>{Hovereditem}</div>}
     </div>
   );
 }
