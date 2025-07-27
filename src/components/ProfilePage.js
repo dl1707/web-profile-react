@@ -242,7 +242,7 @@ function Works({isW})
     <div className="Works">
       <h1 style={{marginLeft:600,marginTop:500}}>Works</h1>
       <h3 style={{marginLeft:70,marginTop:1,marginBottom:1,fontWeight:'bold'}}>See my progress over time...</h3>
-      <ul style={{display:'flex',gap:30,padding:0,margin:0,overflow:'hidden'}}>  {/*overflow to remove Xscrollbar*/}
+      <ul style={{display:'flex',flexWrap:'wrap',gap:30,padding:0,margin:0,overflow:'hidden'}}>  {/*overflow to remove Xscrollbar*/}
         {works.map((item,index)=>
         (
          <div key={index} style={Imagestyle(index)} onClick={()=>navigate('/web-profile-react/displayWork', {state:{name:item.name, image:item.img}})}>
