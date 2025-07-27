@@ -198,7 +198,7 @@ function Works({isW})
     padding:0,
     marginLeft:70,
     marginTop:20,
-    // display:'inline-block',
+    display:'inline-block',
     opacity:0,
     cursor:'pointer',
     animation:(vis)?(idx%2===0?'slideInLeft 0.5s forwards':'slideInRight 0.5s forwards'):(idx%2===0?'slideOutLeft 0.5s forwards':'slideOutRight 0.5s forwards'),    //First cert slideleft,sec cert slideright
@@ -242,7 +242,7 @@ function Works({isW})
     <div className="Works">
       <h1 style={{marginLeft:600,marginTop:500}}>Works</h1>
       <h3 style={{marginLeft:70,marginTop:1,marginBottom:1,fontWeight:'bold'}}>See my progress over time...</h3>
-      <ul style={{display:'flex',flexWrap:'wrap',gap:30,padding:0,margin:0,overflow:'hidden', bgcolor:'limegreen'}}>  {/*overflow to remove Xscrollbar*/}
+      <ul style={{padding:0,margin:0,overflow:'hidden'}}>  {/*overflow to remove Xscrollbar*/}
         {works.map((item,index)=>
         (
          <div key={index} style={Imagestyle(index)} onClick={()=>navigate('/web-profile-react/displayWork', {state:{name:item.name, image:item.img}})}>
