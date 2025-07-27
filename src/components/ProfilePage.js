@@ -188,7 +188,7 @@ function About()
 }
 
 
-//If you want certificate to be permanently visible,change opacity or comment else part of (vis)?
+//If you want works to be permanently visible,change opacity or comment else part of (vis)?
 function Works({isW})
 {
   const vis=isW;
@@ -198,7 +198,8 @@ function Works({isW})
     padding:0,
     marginLeft:70,
     marginTop:20,
-    display:'inline-block',
+    display:'flex',
+    gap:30,
     opacity:0,
     cursor:'pointer',
     animation:(vis)?(idx%2===0?'slideInLeft 0.5s forwards':'slideInRight 0.5s forwards'):(idx%2===0?'slideOutLeft 0.5s forwards':'slideOutRight 0.5s forwards'),    //First cert slideleft,sec cert slideright
