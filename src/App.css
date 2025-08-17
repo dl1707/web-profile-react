@@ -34,5 +34,7 @@
 
   .Works ul{width: 400%;}
 
-  .Certificates ul{width: 368%; background-color: gold;}
+  .Certificates ul{width: 368%; background-color:crimson ;}
+
+  .Certificates ul img {width: 400px;}
 }
