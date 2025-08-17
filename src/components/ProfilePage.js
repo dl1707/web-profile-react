@@ -289,7 +289,7 @@ function Certificates({isC})
   return(
     <div className="Certificates" style={{position:'relative'}}>
       <h1 style={{marginLeft:600,marginTop:100}}>Certificates</h1>
-      <ul style={{padding:0,marginLeft:10,overflow:'hidden'}}>    {/*overflow to remove Xscrollbar*/}
+      <ul style={{padding:0,marginLeft:10,overflow:'visible'}}>    {/*overflow to remove Xscrollbar*/}
         {C.map((item,index)=>
         (
           <div key={index} style={Imagestyle(index)} onClick={()=>setSelectedImage(Folder+item.img)}>
