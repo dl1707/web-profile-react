@@ -298,6 +298,7 @@ function Certificates({isC})
           </div>
         ))}
       </ul>
+      
       {/* View popup */}
       {selectedImage&&
       <div style={{display:'flex',flexDirection:'column',gap:'10px',height:'550px',width:'720px', backgroundColor:'gray', position:'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', borderRadius:'10px', zIndex:1000}}>
