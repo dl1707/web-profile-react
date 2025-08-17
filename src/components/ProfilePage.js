@@ -273,19 +273,19 @@ function Certificates({isC})
   })
 
   const Folder='./Certificates/'
-  const C=[{name:'Codium',img:'Codium.png',ht:250,wt:420},
-           {name:'Web App Development using HTML5',img:'Addon Web.jpg',ht:250,wt:420},
-           {name:'QuantaCom',img:'QuantaCom.png',ht:250,wt:420},
-           {name:'MendX IoT',img:'MendX IoT.png',ht:250,wt:420},
-           {name:'Cybersecurity and Ethical Hacking Workshop',img:'Blue Shell Technologies.png',ht:250,wt:420},
-           {name:'A3K Technical Quiz',img:'A3K Cipher Quest.png',ht:250,wt:420},
-           {name:'Microsoft Intrnforte Internship',img:'Intrnforte Internship Certificate.jpg',ht:250,wt:420},
-           {name:'NPTEL Swayam ML Course',img:'ML NPTEL MOOC Certificate.jpg',ht:250,wt:420},
-           {name:'Gate 2024 Score Card',img:'Gate score 2024.png',ht:250,wt:420},
-           {name:'NPTEL Swayam DL Course',img:'NPTEL Swayam Deep Learning-IIT Ropar Result.png',ht:250,wt:420},
-           {name:'Data Analytics Course 1',img:'Google ADA Course 1.png',ht:250,wt:420},
-           {name:'Data Analytics Course 2',img:'Google ADA Course 2.png',ht:250,wt:420},
-           {name:'Data Analytics Course 3',img:'Google ADA Course 3.png',ht:250,wt:420}];
+  const C=[{name:'Codium',img:'Codium.png'},
+           {name:'Web App Development using HTML5',img:'Addon Web.jpg'},
+           {name:'QuantaCom',img:'QuantaCom.png'},
+           {name:'MendX IoT',img:'MendX IoT.png'},
+           {name:'Cybersecurity and Ethical Hacking Workshop',img:'Blue Shell Technologies.png'},
+           {name:'A3K Technical Quiz',img:'A3K Cipher Quest.png'},
+           {name:'Microsoft Intrnforte Internship',img:'Intrnforte Internship Certificate.jpg'},
+           {name:'NPTEL Swayam ML Course',img:'ML NPTEL MOOC Certificate.jpg'},
+           {name:'Gate 2024 Score Card',img:'Gate score 2024.png'},
+           {name:'NPTEL Swayam DL Course',img:'NPTEL Swayam Deep Learning-IIT Ropar Result.png'},
+           {name:'Data Analytics Course 1',img:'Google ADA Course 1.png'},
+           {name:'Data Analytics Course 2',img:'Google ADA Course 2.png'},
+           {name:'Data Analytics Course 3',img:'Google ADA Course 3.png'}];
   return(
     <div className="Certificates" style={{position:'relative'}}>
       <h1 style={{marginLeft:600,marginTop:100}}>Certificates</h1>
@@ -294,7 +294,7 @@ function Certificates({isC})
         (
           <div key={index} style={Imagestyle(index)} onClick={()=>setSelectedImage(Folder+item.img)}>
             <p style={{fontSize:20,fontWeight:'bold',padding:0}}>{item.name}</p>
-            <img src={Folder+item.img} alt={item.name} height={item.ht} width={item.wt} style={{border:'1px solid black',borderRadius:'10px'}}/>
+            <img src={Folder+item.img} alt={item.name} height={250} width={420} style={{border:'1px solid black',borderRadius:'10px'}}/>
           </div>
         ))}
       </ul>
